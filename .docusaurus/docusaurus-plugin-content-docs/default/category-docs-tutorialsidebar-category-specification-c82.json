@@ -1,0 +1,16 @@
+{
+  "title": "Specification",
+  "description": "Learn the Concerto JSON and CTO syntax and core metamodel concepts.",
+  "slug": "/category/specification",
+  "permalink": "/docs/category/specification",
+  "navigation": {
+    "previous": {
+      "title": "Quick Start",
+      "permalink": "/docs/quick-start"
+    },
+    "next": {
+      "title": "Namespaces",
+      "permalink": "/docs/specification/model-namespaces"
+    }
+  }
+}

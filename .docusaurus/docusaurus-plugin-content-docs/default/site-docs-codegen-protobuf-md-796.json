@@ -1,0 +1,27 @@
+{
+  "unversionedId": "codegen/codegen-protobuf",
+  "id": "codegen/codegen-protobuf",
+  "title": "Protobuf",
+  "description": "Options",
+  "source": "@site/docs/codegen/protobuf.md",
+  "sourceDirName": "codegen",
+  "slug": "/codegen/codegen-protobuf",
+  "permalink": "/docs/codegen/codegen-protobuf",
+  "draft": false,
+  "editUrl": "https://github.com/accordproject/concerto/tree/main/packages/create-docusaurus/templates/shared/docs/codegen/protobuf.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "codegen-protobuf",
+    "title": "Protobuf"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Plant UML",
+    "permalink": "/docs/codegen/codegen-plantuml"
+  },
+  "next": {
+    "title": "Typescript",
+    "permalink": "/docs/codegen/codegen-typescript"
+  }
+}

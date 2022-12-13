@@ -1,0 +1,27 @@
+{
+  "unversionedId": "api/ref-concerto-js-api",
+  "id": "api/ref-concerto-js-api",
+  "title": "JavaScript API Reference",
+  "description": "",
+  "source": "@site/docs/api/ref-js-api.md",
+  "sourceDirName": "api",
+  "slug": "/api/ref-concerto-js-api",
+  "permalink": "/docs/api/ref-concerto-js-api",
+  "draft": false,
+  "editUrl": "https://github.com/accordproject/concerto/tree/main/packages/create-docusaurus/templates/shared/docs/api/ref-js-api.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "ref-concerto-js-api",
+    "title": "JavaScript API Reference"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Using the API",
+    "permalink": "/docs/category/using-the-api"
+  },
+  "next": {
+    "title": "Using the JavaScript API",
+    "permalink": "/docs/api/model-api"
+  }
+}

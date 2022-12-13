@@ -1,0 +1,29 @@
+{
+  "unversionedId": "specification/model-imports",
+  "id": "specification/model-imports",
+  "title": "Imports",
+  "description": "In order for one namespace to reference types defined in another namespace, the types must be imported for a version of a namespace.",
+  "source": "@site/docs/specification/model-imports.md",
+  "sourceDirName": "specification",
+  "slug": "/specification/model-imports",
+  "permalink": "/docs/specification/model-imports",
+  "draft": false,
+  "editUrl": "https://github.com/accordproject/concerto/tree/main/packages/create-docusaurus/templates/shared/docs/specification/model-imports.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "id": "model-imports",
+    "title": "Imports",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Namespaces",
+    "permalink": "/docs/specification/model-namespaces"
+  },
+  "next": {
+    "title": "Enumerations",
+    "permalink": "/docs/specification/model-enums"
+  }
+}

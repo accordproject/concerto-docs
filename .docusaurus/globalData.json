@@ -1,0 +1,223 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "intro",
+          "docs": [
+            {
+              "id": "api/model-api",
+              "path": "/docs/api/model-api",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "api/ref-concerto-js-api",
+              "path": "/docs/api/ref-concerto-js-api",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "codegen/codegen-avro",
+              "path": "/docs/codegen/codegen-avro",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "codegen/codegen-csharp",
+              "path": "/docs/codegen/codegen-csharp",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "codegen/codegen-golang",
+              "path": "/docs/codegen/codegen-golang",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "codegen/codegen-graphql",
+              "path": "/docs/codegen/codegen-graphql",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "codegen/codegen-java",
+              "path": "/docs/codegen/codegen-java",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "codegen/codegen-jsonschema",
+              "path": "/docs/codegen/codegen-jsonschema",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "codegen/codegen-markdown",
+              "path": "/docs/codegen/codegen-markdown",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "codegen/codegen-mermaid",
+              "path": "/docs/codegen/codegen-mermaid",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "codegen/codegen-odata",
+              "path": "/docs/codegen/codegen-odata",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "codegen/codegen-openapi",
+              "path": "/docs/codegen/codegen-openapi",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "codegen/codegen-plantuml",
+              "path": "/docs/codegen/codegen-plantuml",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "codegen/codegen-protobuf",
+              "path": "/docs/codegen/codegen-protobuf",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "codegen/codegen-typescript",
+              "path": "/docs/codegen/codegen-typescript",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "codegen/codegen-xmlschema",
+              "path": "/docs/codegen/codegen-xmlschema",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "import/infer-jsonschema",
+              "path": "/docs/import/infer-jsonschema",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "import/infer-openapi",
+              "path": "/docs/import/infer-openapi",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "intro",
+              "path": "/docs/intro",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "migration/ref-migrate-concerto-0.82-1.0",
+              "path": "/docs/migration/ref-migrate-concerto-0.82-1.0",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "migration/ref-migrate-concerto-1.0-2.0",
+              "path": "/docs/migration/ref-migrate-concerto-1.0-2.0",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "migration/ref-migrate-concerto-2.0-3.0",
+              "path": "/docs/migration/ref-migrate-concerto-2.0-3.0",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quick-start",
+              "path": "/docs/quick-start",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "ref-concerto-cli",
+              "path": "/docs/ref-concerto-cli",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "specification/model-classes",
+              "path": "/docs/specification/model-classes",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "specification/model-decorators",
+              "path": "/docs/specification/model-decorators",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "specification/model-enums",
+              "path": "/docs/specification/model-enums",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "specification/model-imports",
+              "path": "/docs/specification/model-imports",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "specification/model-metamodel",
+              "path": "/docs/specification/model-metamodel",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "specification/model-namespaces",
+              "path": "/docs/specification/model-namespaces",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "specification/model-properties",
+              "path": "/docs/specification/model-properties",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "specification/model-relationships",
+              "path": "/docs/specification/model-relationships",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "specification/model-vocabulary",
+              "path": "/docs/specification/model-vocabulary",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "why-concerto",
+              "path": "/docs/why-concerto",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/specification",
+              "path": "/docs/category/specification",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/code-generation",
+              "path": "/docs/category/code-generation",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/model-inference",
+              "path": "/docs/category/model-inference",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/migration",
+              "path": "/docs/category/migration",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/using-the-api",
+              "path": "/docs/category/using-the-api",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/docs/intro",
+                "label": "intro"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

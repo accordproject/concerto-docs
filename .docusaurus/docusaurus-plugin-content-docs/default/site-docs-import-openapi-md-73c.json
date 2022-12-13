@@ -1,0 +1,27 @@
+{
+  "unversionedId": "import/infer-openapi",
+  "id": "import/infer-openapi",
+  "title": "Open API",
+  "description": "Options",
+  "source": "@site/docs/import/openapi.md",
+  "sourceDirName": "import",
+  "slug": "/import/infer-openapi",
+  "permalink": "/docs/import/infer-openapi",
+  "draft": false,
+  "editUrl": "https://github.com/accordproject/concerto/tree/main/packages/create-docusaurus/templates/shared/docs/import/openapi.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "infer-openapi",
+    "title": "Open API"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "JSON Schema",
+    "permalink": "/docs/import/infer-jsonschema"
+  },
+  "next": {
+    "title": "Migration",
+    "permalink": "/docs/category/migration"
+  }
+}

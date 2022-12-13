@@ -1,0 +1,27 @@
+{
+  "unversionedId": "codegen/codegen-openapi",
+  "id": "codegen/codegen-openapi",
+  "title": "Open API",
+  "description": "Options",
+  "source": "@site/docs/codegen/openapi.md",
+  "sourceDirName": "codegen",
+  "slug": "/codegen/codegen-openapi",
+  "permalink": "/docs/codegen/codegen-openapi",
+  "draft": false,
+  "editUrl": "https://github.com/accordproject/concerto/tree/main/packages/create-docusaurus/templates/shared/docs/codegen/openapi.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "codegen-openapi",
+    "title": "Open API"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "OData",
+    "permalink": "/docs/codegen/codegen-odata"
+  },
+  "next": {
+    "title": "Plant UML",
+    "permalink": "/docs/codegen/codegen-plantuml"
+  }
+}

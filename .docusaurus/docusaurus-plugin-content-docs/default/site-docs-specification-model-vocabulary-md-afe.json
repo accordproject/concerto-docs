@@ -1,0 +1,29 @@
+{
+  "unversionedId": "specification/model-vocabulary",
+  "id": "specification/model-vocabulary",
+  "title": "Vocabulary",
+  "description": "The Vocabulary module for Concerto optionally allows human-readable labels (Terms) to be associated with model elements. Terms are stored within a locale specific vocabulary YAML file associated with a Concerto namespace.",
+  "source": "@site/docs/specification/model-vocabulary.md",
+  "sourceDirName": "specification",
+  "slug": "/specification/model-vocabulary",
+  "permalink": "/docs/specification/model-vocabulary",
+  "draft": false,
+  "editUrl": "https://github.com/accordproject/concerto/tree/main/packages/create-docusaurus/templates/shared/docs/specification/model-vocabulary.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "id": "model-vocabulary",
+    "title": "Vocabulary",
+    "sidebar_position": 7
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Decorators",
+    "permalink": "/docs/specification/model-decorators"
+  },
+  "next": {
+    "title": "Metamodel JSON",
+    "permalink": "/docs/specification/model-metamodel"
+  }
+}

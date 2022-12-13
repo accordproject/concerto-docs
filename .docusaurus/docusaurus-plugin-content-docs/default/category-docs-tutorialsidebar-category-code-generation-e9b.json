@@ -1,0 +1,16 @@
+{
+  "title": "Code Generation",
+  "description": "Generate code from your Concerto models",
+  "slug": "/category/code-generation",
+  "permalink": "/docs/category/code-generation",
+  "navigation": {
+    "previous": {
+      "title": "Metamodel JSON",
+      "permalink": "/docs/specification/model-metamodel"
+    },
+    "next": {
+      "title": "Apache Avro",
+      "permalink": "/docs/codegen/codegen-avro"
+    }
+  }
+}

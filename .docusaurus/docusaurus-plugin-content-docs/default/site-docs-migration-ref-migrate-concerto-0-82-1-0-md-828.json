@@ -1,0 +1,27 @@
+{
+  "unversionedId": "migration/ref-migrate-concerto-0.82-1.0",
+  "id": "migration/ref-migrate-concerto-0.82-1.0",
+  "title": "Concerto 0.82 to 1.0",
+  "description": "Concerto 1.0 delivers fundamental improvements over previous releases, whilst maintaining a high-degree (though not total!) of backwards compatibility with 0.82. In particular all of the 0.82 Concerto syntax remains valid in 1.0.",
+  "source": "@site/docs/migration/ref-migrate-concerto-0.82-1.0.md",
+  "sourceDirName": "migration",
+  "slug": "/migration/ref-migrate-concerto-0.82-1.0",
+  "permalink": "/docs/migration/ref-migrate-concerto-0.82-1.0",
+  "draft": false,
+  "editUrl": "https://github.com/accordproject/concerto/tree/main/packages/create-docusaurus/templates/shared/docs/migration/ref-migrate-concerto-0.82-1.0.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "ref-migrate-concerto-0.82-1.0",
+    "title": "Concerto 0.82 to 1.0"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Migration",
+    "permalink": "/docs/category/migration"
+  },
+  "next": {
+    "title": "Concerto 1.0 to 2.0",
+    "permalink": "/docs/migration/ref-migrate-concerto-1.0-2.0"
+  }
+}

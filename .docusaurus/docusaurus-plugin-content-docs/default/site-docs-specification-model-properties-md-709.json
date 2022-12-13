@@ -1,0 +1,29 @@
+{
+  "unversionedId": "specification/model-properties",
+  "id": "specification/model-properties",
+  "title": "Properties",
+  "description": "Class declarations contain properties. Each property has a type which can either be a type defined in the same namespace, an imported type, or a primitive type.",
+  "source": "@site/docs/specification/model-properties.md",
+  "sourceDirName": "specification",
+  "slug": "/specification/model-properties",
+  "permalink": "/docs/specification/model-properties",
+  "draft": false,
+  "editUrl": "https://github.com/accordproject/concerto/tree/main/packages/create-docusaurus/templates/shared/docs/specification/model-properties.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "id": "model-properties",
+    "title": "Properties",
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Classes",
+    "permalink": "/docs/specification/model-classes"
+  },
+  "next": {
+    "title": "Relationships",
+    "permalink": "/docs/specification/model-relationships"
+  }
+}

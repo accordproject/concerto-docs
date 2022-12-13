@@ -1,0 +1,27 @@
+{
+  "unversionedId": "codegen/codegen-typescript",
+  "id": "codegen/codegen-typescript",
+  "title": "Typescript",
+  "description": "Options",
+  "source": "@site/docs/codegen/typescript.md",
+  "sourceDirName": "codegen",
+  "slug": "/codegen/codegen-typescript",
+  "permalink": "/docs/codegen/codegen-typescript",
+  "draft": false,
+  "editUrl": "https://github.com/accordproject/concerto/tree/main/packages/create-docusaurus/templates/shared/docs/codegen/typescript.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "codegen-typescript",
+    "title": "Typescript"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Protobuf",
+    "permalink": "/docs/codegen/codegen-protobuf"
+  },
+  "next": {
+    "title": "XML Schema",
+    "permalink": "/docs/codegen/codegen-xmlschema"
+  }
+}

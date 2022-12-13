@@ -1,0 +1,27 @@
+{
+  "unversionedId": "codegen/codegen-plantuml",
+  "id": "codegen/codegen-plantuml",
+  "title": "Plant UML",
+  "description": "Options",
+  "source": "@site/docs/codegen/plantuml.md",
+  "sourceDirName": "codegen",
+  "slug": "/codegen/codegen-plantuml",
+  "permalink": "/docs/codegen/codegen-plantuml",
+  "draft": false,
+  "editUrl": "https://github.com/accordproject/concerto/tree/main/packages/create-docusaurus/templates/shared/docs/codegen/plantuml.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "codegen-plantuml",
+    "title": "Plant UML"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Open API",
+    "permalink": "/docs/codegen/codegen-openapi"
+  },
+  "next": {
+    "title": "Protobuf",
+    "permalink": "/docs/codegen/codegen-protobuf"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "unversionedId": "codegen/codegen-graphql",
+  "id": "codegen/codegen-graphql",
+  "title": "GraphQL",
+  "description": "Options",
+  "source": "@site/docs/codegen/graphql.md",
+  "sourceDirName": "codegen",
+  "slug": "/codegen/codegen-graphql",
+  "permalink": "/docs/codegen/codegen-graphql",
+  "draft": false,
+  "editUrl": "https://github.com/accordproject/concerto/tree/main/packages/create-docusaurus/templates/shared/docs/codegen/graphql.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "codegen-graphql",
+    "title": "GraphQL"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Go",
+    "permalink": "/docs/codegen/codegen-golang"
+  },
+  "next": {
+    "title": "Java",
+    "permalink": "/docs/codegen/codegen-java"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "unversionedId": "specification/model-metamodel",
+  "id": "specification/model-metamodel",
+  "title": "Metamodel JSON",
+  "description": "Concerto models are JSON documents.",
+  "source": "@site/docs/specification/model-metatmodel.md",
+  "sourceDirName": "specification",
+  "slug": "/specification/model-metamodel",
+  "permalink": "/docs/specification/model-metamodel",
+  "draft": false,
+  "editUrl": "https://github.com/accordproject/concerto/tree/main/packages/create-docusaurus/templates/shared/docs/specification/model-metatmodel.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "id": "model-metamodel",
+    "title": "Metamodel JSON",
+    "sidebar_position": 8
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Vocabulary",
+    "permalink": "/docs/specification/model-vocabulary"
+  },
+  "next": {
+    "title": "Code Generation",
+    "permalink": "/docs/category/code-generation"
+  }
+}

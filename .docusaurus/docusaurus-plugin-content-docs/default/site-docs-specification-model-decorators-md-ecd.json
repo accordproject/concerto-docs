@@ -1,0 +1,29 @@
+{
+  "unversionedId": "specification/model-decorators",
+  "id": "specification/model-decorators",
+  "title": "Decorators",
+  "description": "Model elements may have arbitrary decorators (aka annotations) placed on them. These are available via API and can be useful for tools to extend the model. Accord Project decorators are defined in the Decorators Reference.",
+  "source": "@site/docs/specification/model-decorators.md",
+  "sourceDirName": "specification",
+  "slug": "/specification/model-decorators",
+  "permalink": "/docs/specification/model-decorators",
+  "draft": false,
+  "editUrl": "https://github.com/accordproject/concerto/tree/main/packages/create-docusaurus/templates/shared/docs/specification/model-decorators.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "id": "model-decorators",
+    "title": "Decorators",
+    "sidebar_position": 6
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Relationships",
+    "permalink": "/docs/specification/model-relationships"
+  },
+  "next": {
+    "title": "Vocabulary",
+    "permalink": "/docs/specification/model-vocabulary"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "unversionedId": "codegen/codegen-csharp",
+  "id": "codegen/codegen-csharp",
+  "title": "C#",
+  "description": "Options",
+  "source": "@site/docs/codegen/csharp.md",
+  "sourceDirName": "codegen",
+  "slug": "/codegen/codegen-csharp",
+  "permalink": "/docs/codegen/codegen-csharp",
+  "draft": false,
+  "editUrl": "https://github.com/accordproject/concerto/tree/main/packages/create-docusaurus/templates/shared/docs/codegen/csharp.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "codegen-csharp",
+    "title": "C#"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Apache Avro",
+    "permalink": "/docs/codegen/codegen-avro"
+  },
+  "next": {
+    "title": "Go",
+    "permalink": "/docs/codegen/codegen-golang"
+  }
+}
