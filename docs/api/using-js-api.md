@@ -1,5 +1,5 @@
 ---
-id: model-api
+id: api-usage
 title: Using the JavaScript API
 ---
 

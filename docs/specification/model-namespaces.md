@@ -4,7 +4,7 @@ title: Namespaces
 sidebar_position: 1
 ---
 
-Each Concerto file (by convention with a `.cto` file extension) starts with the name and version of a single namespace. A Concerto namespace declares a set of *declarations*. A declaration is one of: enumeration, concept, asset, participant, transaction, event. 
+Each Concerto file (by convention with a `.cto` file extension) starts with the name and version of a single namespace. A Concerto namespace declares a set of *declarations*. A declaration is one of: enumeration, scalar, concept, asset, participant, transaction, event. 
 
 All declarations within a single file belong to the same namespace.
 

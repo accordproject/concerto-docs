@@ -1,7 +1,7 @@
 ---
-id: model-vocabulary
+id: vocabulary
 title: Vocabulary
-sidebar_position: 7
+sidebar_position: 5
 ---
 
 The Vocabulary module for Concerto optionally allows human-readable labels (Terms) to be associated with model elements. Terms are stored within a locale specific vocabulary YAML file associated with a Concerto namespace.

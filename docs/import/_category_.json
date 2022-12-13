@@ -1,6 +1,5 @@
 {
   "label": "Model Inference",
-  "position": 4,
   "link": {
     "type": "generated-index",
     "description": "Convert existing models to Concerto"
