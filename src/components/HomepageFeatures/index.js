@@ -8,17 +8,17 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Concerto was designed from the ground up to be easily installed and
-        used to get your data model up and running quickly.
+        Concerto was designed from the ground up to be easy to learn, whether you
+        are new to data modelling or a seasoned pro.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Powerful Tools',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Concerto lets you focus on your data model, and we&apos;ll do the chores.
+        Import your existing models, or convert Concerto models to 14+ output formats.
       </>
     ),
   },
@@ -27,7 +27,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Concerto runtime is 100% JavaScript and can run in your web-browser or other
+        Concerto's JavaScript runtime can run in your web-browser or other
         resource constrained device.
       </>
     ),
