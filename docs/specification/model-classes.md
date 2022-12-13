@@ -1,6 +1,6 @@
 ---
 id: model-classes
-title: Classes
+title: Concepts
 sidebar_position: 4
 ---
 
@@ -20,7 +20,7 @@ Concepts can be declared `abstract` if it should not be instantiated (must be su
 
 ## Identity
 
-Concepts may optionally declare an identifying field, using either the `identified by` (explicitly named identity field) or `identified` (`$identifier` system identity field) syntax. Identifying fields must have type `String`.
+Concepts may optionally declare an identifying field, using either the `identified by` (explicitly named identity field) or `identified` (`$identifier` system identity field) syntax. Identifying fields must have type `String` or a String facet.
 
 `Person` below is defined to use the `email` property as its identifying field.
 

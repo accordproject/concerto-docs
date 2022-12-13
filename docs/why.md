@@ -8,7 +8,7 @@ sidebar_position: 2
 
 All software applications have a data or domain model.
 
-Models are required to create *generic tools* because you need to write code that reasons about the structure of user-defined domain models. As soon as you want to implement something like an "No Code tool", Object-Relational-Mapper, REST API browser or web-form generator, you need a data model.
+Models are required to create *generic tools* because you need to write code that reasons about the structure of user-defined domain models. As soon as you want to implement something like a "No Code tool", Object-Relational-Mapper, REST API browser or web-form generator, you need a data model.
 
 The data model for your application can either be implicit (duck typing...) or explicit. If it is explicit, it can be expressed using a wide range of technology including XML Schema, JSON Schema, protobufs, NoSQL design documents, Java classes, Typescript types, Go structs, RDBMS tables, ad-hoc JSON or YAML documents... the list is almost endless.
 

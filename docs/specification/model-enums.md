@@ -4,7 +4,7 @@ title: Enumerations
 sidebar_position: 3
 ---
 
-Enumerations are used to capture lists of domain values.
+Enumerations are used to capture static lists of domain values.
 
 ```js
 enum Cardsuit {

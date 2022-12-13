@@ -4,12 +4,13 @@ title: Imports
 sidebar_position: 2
 ---
 
-In order for one namespace to reference types defined in another namespace, the types must be imported for a version of a namespace.
+In order for one namespace to reference types defined in another namespace, the types must be imported from a versioned namespace. Via imports you can decompose your modles into discrete files (and namespaces), version them and build a graph of dependencies between your models.
 
-## Simple
+## Single Import
 
 ```js
-import org.accordproject.address@1.0.0.PostalAddress // imports PostalAddress from version 1.0.0 of the org.accordproject.address namespace
+// imports PostalAddress from version 1.0.0 of the org.accordproject.address namespace
+import org.accordproject.address@1.0.0.PostalAddress 
 ```
 
 ## Multiple Imports
@@ -17,7 +18,8 @@ import org.accordproject.address@1.0.0.PostalAddress // imports PostalAddress fr
 To import multiple types from the same namespace, use the `{}` syntax:
 
 ```js
-import org.accordproject.address@1.0.0.{PostalAddress,Country} // imports PostalAddress and Country from version 1.0.0 of the org.accordproject.address namespace
+// imports PostalAddress and Country from version 1.0.0 of the org.accordproject.address namespace
+import org.accordproject.address@1.0.0.{PostalAddress,Country} 
 ```
 
 ## Importing from model published to a public URL
@@ -25,10 +27,11 @@ import org.accordproject.address@1.0.0.{PostalAddress,Country} // imports Postal
 Import also can use the optional `from` declaration to import a model file that has been deployed to a URL.
 
 ```js
+// imports a type from a publicly addressable URL
 import org.accordproject.address@1.0.0.PostalAddress from https://models.accordproject.org/address.cto
 ```
 
-Imports using a `from` declaration can be downloaded into the model manager by calling `modelManager.updateExternalModels`.
+Imports using a `from` declaration can be downloaded into the model manager by calling `modelManager.updateExternalModels` or the `concerto get` CLI command.
 
 The Model Manager will resolve all imports to ensure that the set of declarations that have been loaded are globally consistent. 
 
@@ -41,7 +44,9 @@ For backwards compatability, and when running with `strict:false` imports may im
 Imports can be either qualified or can use wildcards.
 
 ```js
-import org.accordproject.address.PostalAddress // import a type from an unversioned namespace
-import org.accordproject.address.* // import all types from an unversioned namespace
+// import a type from an unversioned namespace (only if strict=false)
+import org.accordproject.address.PostalAddress
+// import all types from an unversioned namespace (only if strict=false)
+import org.accordproject.address.*
 ```
 
