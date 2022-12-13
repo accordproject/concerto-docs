@@ -8,5 +8,19 @@
     "opts": {
         "destination": "./docs/",
         "recurse": true
-    }
+    },
+    "sourceType": "module",
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc","closure"]
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false
+    },
+    "module-index-format" : "table",
+    "global-index-format" : "table",
+    "param-list-format" : "table",
+    "property-list-format" : "table",
+    "member-index-format" : "grouped"
 }

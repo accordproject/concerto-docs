@@ -10,7 +10,7 @@ const config = {
   tagline: 'Data Modeling Language and Tools',
   url: 'https://concerto.accordproject.org',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
 
