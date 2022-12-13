@@ -7,8 +7,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Accord Project — Concerto',
-  tagline: 'Data Model/Schema Language and Tools',
-  url: 'https://your-docusaurus-test-site.com',
+  tagline: 'Data Modeling Language and Tools',
+  url: 'https://concerto.accordproject.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',

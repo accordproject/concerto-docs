@@ -8,8 +8,8 @@ const FeatureList = [
     Svg: require('@site/static/img/easy.svg').default,
     description: (
       <>
-        Concerto was designed from the ground up to be easy to learn, whether you
-        are new to data modelling or a seasoned pro.
+        Designed from the ground up to be easy to learn, 
+        for both newcomers and data modeling pros.
       </>
     ),
   },
@@ -27,8 +27,7 @@ const FeatureList = [
     Svg: require('@site/static/img/web.svg').default,
     description: (
       <>
-        Concerto's JavaScript runtime can run in your web-browser or other
-        resource constrained device.
+        Import models from URLs. Lightweight browser compatible runtime.
       </>
     ),
   },
