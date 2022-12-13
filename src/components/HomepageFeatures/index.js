@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/easy.svg').default,
     description: (
       <>
         Concerto was designed from the ground up to be easy to learn, whether you
@@ -15,7 +15,7 @@ const FeatureList = [
   },
   {
     title: 'Powerful Tools',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/powerful.svg').default,
     description: (
       <>
         Import your existing models, or convert Concerto models to 14+ output formats.
@@ -24,7 +24,7 @@ const FeatureList = [
   },
   {
     title: 'Built for the Web',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/web.svg').default,
     description: (
       <>
         Concerto's JavaScript runtime can run in your web-browser or other
