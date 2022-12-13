@@ -1,0 +1,6 @@
+namespace test@1.0.0
+
+concept Person identified by email {
+  o String email
+  o DateTime dob optional
+}

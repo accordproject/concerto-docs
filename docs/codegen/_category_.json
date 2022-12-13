@@ -1,0 +1,8 @@
+{
+  "label": "Code Generation",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Generate code from your Concerto models"
+  }
+}
