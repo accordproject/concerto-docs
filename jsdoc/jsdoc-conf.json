@@ -1,0 +1,12 @@
+{
+    "source": {
+        "includePattern": ".+\\.js$",
+        "include": ["concerto"],
+        "excludePattern": "(node_modules|test)"
+    },
+    "recurseDepth": 10,
+    "opts": {
+        "destination": "./docs/",
+        "recurse": true
+    }
+}
