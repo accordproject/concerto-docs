@@ -1,6 +1,6 @@
 ---
-id: api-usage
-title: Using the JavaScript API
+id: api-js-examples
+title: JavaScript API Examples
 ---
 
 ## Install the Core Library
