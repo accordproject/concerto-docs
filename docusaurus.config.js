@@ -60,7 +60,13 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Docs',
+            label: 'Introduction',
+          },
+          {
+            type: 'doc',
+            docId: 'contributing',
+            position: 'right',
+            label: 'Contribute!',
           },
           {
             href: 'https://github.com/accordproject/concerto',
@@ -73,11 +79,15 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Documentation',
             items: [
               {
                 label: 'Introduction',
                 to: '/docs/intro',
+              },
+              {
+                label: 'Contribute!',
+                to: '/docs/contributing',
               },
             ],
           },

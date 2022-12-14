@@ -1,1 +1,31 @@
-{"$class":"concerto.metamodel@1.0.0.Model","decorators":[],"namespace":"test@1.0.0","imports":[],"declarations":[{"$class":"concerto.metamodel@1.0.0.ConceptDeclaration","name":"Person","isAbstract":false,"properties":[{"$class":"concerto.metamodel@1.0.0.StringProperty","name":"email","isArray":false,"isOptional":false},{"$class":"concerto.metamodel@1.0.0.DateTimeProperty","name":"dob","isArray":false,"isOptional":true}],"identified":{"$class":"concerto.metamodel@1.0.0.IdentifiedBy","name":"email"}}]}
+{
+    "$class": "concerto.metamodel@1.0.0.Model",
+    "decorators": [],
+    "namespace": "test@1.0.0",
+    "imports": [],
+    "declarations": [
+        {
+            "$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
+            "name": "Person",
+            "isAbstract": false,
+            "properties": [
+                {
+                    "$class": "concerto.metamodel@1.0.0.StringProperty",
+                    "name": "email",
+                    "isArray": false,
+                    "isOptional": false
+                },
+                {
+                    "$class": "concerto.metamodel@1.0.0.DateTimeProperty",
+                    "name": "dob",
+                    "isArray": false,
+                    "isOptional": true
+                }
+            ],
+            "identified": {
+                "$class": "concerto.metamodel@1.0.0.IdentifiedBy",
+                "name": "email"
+            }
+        }
+    ]
+}
