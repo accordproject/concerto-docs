@@ -6,13 +6,13 @@ sidebar_position: 5
 
 A relationship in Concerto Modeling Language (CML) is a tuple composed of:
 
-1. The namespace of the type being referenced
+1. The namespace (including version) of the type being referenced
 2. The type name of the type being referenced
 3. The identifier of the instance being referenced
 
-Hence a relationship could be: `org.example.Vehicle#123456`
+Hence a relationship could be: `org.example@1.0.0.Vehicle#123456`
 
-This would be a relationship to the `Vehicle` _type_ declared in the `org.example` _namespace_ with the _identifier_ `123456`.
+This would be a relationship to the `Vehicle` _type_ declared in the `org.example@1.0.0` _namespace_ with the _identifier_ `123456`.
 
 > A relationship can be defined to any *identifiable* type, that is a type that has been declared with either the `identified by` or `identified` properties.
 
