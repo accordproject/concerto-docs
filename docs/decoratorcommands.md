@@ -1,6 +1,6 @@
 ---
 id: decoratorcommands
-title: Decorator Commads
+title: Decorator Commands
 sidebar_position: 7
 ---
 
