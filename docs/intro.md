@@ -4,17 +4,40 @@ sidebar_position: 1
 
 # Introduction
 
-Concerto is a lightweight schema language and runtime for business concepts.
+Concerto is a lightweight data modeling (schema) language and runtime for business concepts.
+
+Here is a simple model, expressed using the Concerto CTO syntax:
 
 ```cs
+namespace test@1.0.0
+
+enum Country {
+   o UK
+   o USA
+   o FRANCE
+   o GERMANY
+   o JAPAN
+}
+
+concept Address {
+   o String street
+   o String city
+   o String postCode
+   o Country country
+}
+
 concept Person identified by name  {
   o String name
   o Address address optional
   @description("Height (cm)")
-  o Double height range=[0,]
+  o Double height range=[0.0,]
   o DateTime dateOfBirth 
 }
 ```
+
+And here is the **generated** Plant UML diagram for the model:
+
+![UML diagram](/img/uml.svg)
 
 🏢 Concerto gives you “just enough” expressivity to capture real-world business models, while remaining easy to map to most runtime environments.
 
