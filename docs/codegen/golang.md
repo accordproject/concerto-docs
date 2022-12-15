@@ -12,10 +12,13 @@ concerto compile --model test.cto --target golang
 ## Sample Output
 
 ```
-package main
+// Package test_1_0_0 contains domain objects and was generated from Concerto namespace test@1.0.0.
+package test_1_0_0
 import "time"
+import "concerto_1_0_0";
+   
 type Person struct {
-   Concept
+   concerto_1_0_0.Concept
    Email string `json:"email"`
    Dob time.Time `json:"dob"`
 }
