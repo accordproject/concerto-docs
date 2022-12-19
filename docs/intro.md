@@ -56,7 +56,7 @@ And here is the **generated** Plant UML diagram for the model:
 Infer models from other formats:
 - JSON document
 - JSON Schema
-- OpenAPI v3 specification document
+- OpenAPI v3 specification
 
 ## Accord Project 
 
