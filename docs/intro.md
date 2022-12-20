@@ -68,6 +68,6 @@ Accord Project source code files are made available under the [Apache License, V
 Accord Project documentation files are made available under the [Creative Commons Attribution 4.0 International License][creativecommons] (CC-BY-4.0).
 
 [linuxfound]: https://www.linuxfoundation.org
-[charter]: https://github.com/accordproject/governance/blob/master/
+[charter]: https://github.com/accordproject/governance/blob/main/accord-project-technical-charter.md
 [apache]: https://github.com/accordproject/concerto/blob/master/LICENSE
 [creativecommons]: http://creativecommons.org/licenses/by/4.0/
