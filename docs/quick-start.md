@@ -53,7 +53,7 @@ Options:
 
 ## Create your first Concerto model
 
-> Note, if you use the VSCode IDE you can install the [Accord Project (Concerto) extension](https://marketplace.visualstudio.com/items?itemName=accordproject.concerto-vscode-extension) to benefit from syntax highlighting, compilation, and more.
+> Note, if you use the VSCode IDE you can install the [Accord Project (Concerto) extension](./vscode.md) to benefit from syntax highlighting, compilation, and more.
 
 Open a code or text editor and create a plain text file, with the contents:
 
