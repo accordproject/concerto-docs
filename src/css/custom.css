@@ -28,3 +28,21 @@
   --ifm-color-primary-lightest: #ffffff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* mouse over link */
+.markdown a {
+  color: #3333FF;
+  text-decoration: underline;
+}
+
+/* mouse over link */
+.markdown a:hover {
+  color: #bb1122;
+  text-decoration: underline;
+}
+
+/* selected link */
+.markdown a:active {
+  color: #bb1122;
+  text-decoration: underline;
+}

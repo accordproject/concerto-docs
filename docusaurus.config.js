@@ -26,7 +26,6 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
   presets: [
     [
       'classic',
@@ -37,7 +36,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/accordproject/concerto/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/accordproject/concerto-docs.git',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -128,6 +127,12 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      algolia: {
+        appId: 'ZJRJ9BVJ83',
+        apiKey: 'f5ac6c043d34d577568dcb3923e1af33',
+        indexName: 'accordproject_concerto',
+        algoliaOptions: {} // Optional, if provided by Algolia
+      },    
     }),
 };
 
