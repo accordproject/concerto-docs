@@ -7,7 +7,8 @@ sidebar_position: 3
 Primitive types (String, Boolean, Integer, Long, Double, DateTime) may be declared and reused via a `scalar` declaration.
 
 ```
-scalar <name> extends <primitive Concerto type> <optional primitive Concerto type meta data>
+scalar <name> extends <primitive Concerto type> 
+   <optional primitive Concerto type meta data>
 ```
 
 Example:
