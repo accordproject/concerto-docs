@@ -27,15 +27,15 @@ This are frequently business glossaries, ontologies, or vocabularies (set of agr
 
 ### Platform Independent Model (PIM)
 
-Platform Independent Models may serve as a pivot model between CIM models and PSM models. Concerto is a good example of a PIM modelling language; designed to capture the details of a domain in sufficient detail that useful platform specific code can be generated from the model, or the model could be related to vocabulary terms.
+Platform Independent Models may serve as a pivot model between CIM models and PSM models. Concerto is a good example of a PIM modelling language; designed to capture the details of a domain in sufficient detail that useful platform specific code can be generated from the model, or the model could be related to [vocabulary terms](./vocabulary.md).
 
 ### Platform Specific Model (PSM)
 
-A Platform Specific Model is built by a developer for a specific programming language or runtime. For example, you can use Concerto [code generation](./category/code-generation) to a variety of platform specific models from your Concerto model.
+A Platform Specific Model is built by a developer for a specific programming language or runtime. For example, you can use Concerto [code generation](./category/code-generation) to create platform specific models from your Concerto model.
 
 ## Creating Generic Tools
 
-Models are required to create *generic tools* because you need to write code that reasons about the structure of **user-defined domain models**. As soon as you want to implement something like a "No Code tool", Object-Relational-Mapper, expression/formula language, query builder, REST API browser or web-form generator, you need a data model.
+Models are required to create *generic tools* because you need to write code that reasons about the structure of **user-defined domain models**. As soon as you want to implement something like a "No Code tool", Object-Relational-Mapper, expression/formula language, query builder, REST API browser or web-form generator, you need a data model that can be introspected at runtime.
 
 ## Choosing a Data Model Language
 
@@ -62,7 +62,7 @@ Concerto solves many of these problems by providing an Object-Oriented schema la
 
 Concerto has particularly strong support for modularity and reuse, good JSON serialization, and [code generators](./category/code-generation) for many common programming languages and data model formats.
 
-Concerto has a powerful Command Line Interface to work with models, as well as runtimes in JavaScript (it can even be used in a web-browser) and experimental support for C#.
+Concerto has a powerful Command Line Interface to work with models, as well as runtimes in JavaScript (it can even be used in a web-browser), and experimental support for C#.
 
 ## Additional Reading
 
