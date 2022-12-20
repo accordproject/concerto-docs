@@ -5,58 +5,75 @@ title: JavaScript API Examples
 
 ## Install the Core Library
 
-To install the core model library in your project:
+To install the core Concerto library in your project:
 ```
 npm install @accordproject/concerto-core --save
 ```
 
-## Validating JSON data using a Model
+## Validating JSON data and Introspecting a Model
+
+[Run this code on replit](https://replit.com/@dselman/AccordProjectConcerto)
 
 ```js
-const ModelManager = require('@accordproject/concerto-core').ModelManager;
-const Concerto = require('@accordproject/concerto-core').Concerto;
-const modelManager = new ModelManager();
-modelManager.addCTOModel( `namespace org.acme.address
-concept PostalAddress {
-  o String streetAddress optional
-  o String postalCode optional
-  o String postOfficeBoxNumber optional
-  o String addressRegion optional
-  o String addressLocality optional
-  o String addressCountry optional
-}`, 'model.cto');
+const { ModelManager, Concerto } = require('@accordproject/concerto-core');
 
-const postalAddress = {
-    $class : 'org.acme.address.PostalAddress',
-    streetAddress : '1 Maine Street'
-};
-const concerto = new Concerto(modelManager);
-concerto.validate(postalAddress);
-```
+try {
+  // create the model manager, used to manage a consistent set of
+  // related models
+  const mm = new ModelManager();
 
-Now try validating this instance:
+  // add a CTO file (as a string) to the model manager
+  mm.addModel(`namespace test@1.0.0
 
-```
-const postalAddress = {
-    $class : 'org.acme.address.PostalAddress',
-    missing : '1 Maine Street'
-};
-```
+abstract concept Person
+{
+	o String firstName
+	o String lastName
+}
 
-Validation should fail with the message:
+concept Driver extends Person {
+  o String favoriteColor
+}
 
-```
-Instance undefined has a property named missing which is not declared in org.acme.address.PostalAddress
-```
+concept Car identified by vin
+{
+	o String vin
+	o Person owner
+}`);
 
-## Runtime introspection of the model
+  // create the Concerto instance to validate data 
+  // against the model and to introspect the model
+  // the Concerto instance is bound to a model manager
+  const concerto = new Concerto(mm);
 
-You can use the Concerto `introspect` APIs to retrieve model information at runtime:
+  // define some sample data, consistent with the model
+  const data = {
+    $class: "test@1.0.0.Car",
+    vin: "abc123",
+    owner: {
+      $class: "test@1.0.0.Driver",
+      firstName: "John",
+      lastName: "Doe",
+      favoriteColor: "Blue"
+    }
+  };
 
-```
-const typeDeclaration = concerto.getTypeDeclaration(postalAddress);
-const fqn = typeDeclaration.getFullyQualifiedName();
-console.log(fqn); // should equal 'org.acme.address.PostalAddress'
+  // validate the data
+  concerto.validate(data);
+  console.log('Valid data!')
+
+  // get the type declaration for the data
+  const typeDeclaration = concerto.getTypeDeclaration(data);
+
+  // get the fully-qualified name for the type declaration
+  const fqn = typeDeclaration.getFullyQualifiedName();
+  console.log(fqn);
+  // iterate over each of the properties of the type declaration
+  typeDeclaration.getProperties().forEach(p => console.log(`- ${p.getName()} : ${p.getFullyQualifiedTypeName()}`));
+}
+catch (err) {
+  console.log(err)
+}
 ```
 
 These APIs allow you to examine the declared properties, super types and meta-properies for a modelled type.

@@ -140,6 +140,6 @@ The output should now be:
 
 ## Congratulations!
 
-Well done, you've created your first Concerto model and used the CLI to validate data against the model! This is just the start... 
+Well done, you've created your first Concerto model and used the CLI to validate data against the model! This is just the start...
 
-Please refer to the other tutorials for more advanced scenarios and for details on the Concerto API.
+You may want to continue to read about [static code generation](./category/code-generation), or using the [JavaScript runtime API](./api/using-js-api.md) to introspect models at runtime.
