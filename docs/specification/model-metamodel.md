@@ -22,7 +22,7 @@ It can be converted to metamodel JSON format via the command:
 > Note: the `excludeLineLocations` argument removes the text stream positional information from the output JSON
 
 ```bash
-parse --model test.cto --excludeLineLocations
+concerto parse --model test.cto --excludeLineLocations
 ```
 
 Giving the output:
@@ -58,6 +58,22 @@ Giving the output:
             }
         }
     ]
+}
+```
+A metamodel JSON document can be converted back to CTO format using the CLI command:
+
+```bash
+concerto print --input ./docs/test.json
+```
+
+Which will echo the CTO to the console:
+
+```js
+namespace test@1.0.0
+
+concept Person identified by email {
+  o String email
+  o DateTime dob optional
 }
 ```
 
