@@ -15,7 +15,7 @@ concerto compile --model test.cto --target csharp
 
 Allowed data types - 
 ```
-bool,byte,char,decimal,double,float,int,long,nint,nuint,sbyte,short, string,uint,ulong,ushort
+bool,byte,char,decimal,double,float,int,long,nint,nuint,sbyte,short,string,uint,ulong,ushort
 ```
 
 Eg, test.cto
