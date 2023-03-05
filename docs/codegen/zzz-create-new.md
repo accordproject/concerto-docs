@@ -50,7 +50,14 @@ converts Concerto namespaces containing `.` to Go package names containing `_`.
 
 ## Primitive Type Mapping
 
-You will also have to map Concerto's primitive types to your target language type system.
+You will also have to map Concerto's primitive types to your target language type system. The Concerto primitive types are:
+
+- DateTime
+- Boolean
+- String
+- Double
+- Long
+- Integer
 
 For example, for Go, the mapping from Concerto primitives to Go types is as follows:
 
