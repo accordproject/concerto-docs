@@ -23,4 +23,4 @@ Top level repository (concerto), with sub packages. Each sub-package is publishe
 Independent repositories for the following packages:
 * [concerto-cli](https://github.com/accordproject/concerto-cli) : command-line interface for Concerto
 * [concerto-codegen](https://github.com/accordproject/concerto-codegen) : model converters and tools for Concerto model files
-* [concerto-metamodel](https://github.com/accordproject/concerto-metamodel) : contains utility functions for accessing and manipulating the new Concerto metamodel
+* [concerto-metamodel](https://github.com/accordproject/concerto-metamodel) : contains utility functions for accessing and manipulating the Concerto metamodel
