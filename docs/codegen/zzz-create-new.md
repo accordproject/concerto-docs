@@ -158,6 +158,10 @@ The `parameters` object contains a `fileWriter` object, an instance of `FileWrit
     }
 ```
 
+### JSON Serialization
+
+Ideally the code that you generate can deserialize JSON documents created by the Concerto runtime (the JavaScript [Serializer](https://concerto.accordproject.org/docs/api/ref-concerto-js-api#module_concerto-core.Serializer)). This is not a hard-and-fast requirement however, and is not applicable to all target languages.
+
 ### Tests
 
 It is important to fully test your code generator. You don't want it to crash when it encounters an element of the Concerto metamodel that you have not tested! 
