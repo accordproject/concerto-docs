@@ -22,11 +22,11 @@ For example, here is the mapping from the Concerto metamodel to the Go Lang meta
 | scalar         | struct field    | Unbox the scalar to a field     |
 | relationship   | pointer to type |                                 |
 | primitives     | (see below)     |                                 |
-| decorators     | ignored         |                                 |
-| integer domain | ignored         |                                 |
-| long domain    | ignored         |                                 |
-| double domain  | ignored         |                                 |
-| string regex   | ignored         |                                 |
+| decorators     | _ignored_       |                                 |
+| integer domain | _ignored_       |                                 |
+| long domain    | _ignored_       |                                 |
+| double domain  | _ignored_       |                                 |
+| string regex   | _ignored_       |                                 |
 
 Depending on your target language's metamodel creating this mapping may be trivial or challenging!
 
