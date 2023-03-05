@@ -18,7 +18,7 @@ For example, here is the mapping from the Concerto metamodel to the Go Lang meta
 | enum           | type {NAME} int |                                 |
 | concept        | struct          | Concerto super type is embedded |
 | field          | struct field    | Set `json:` for serialization   |
-| enum Value     | struct field    | Set `iota`                      |
+| enum value     | struct field    | Set `iota`                      |
 | scalar         | struct field    | Unbox the scalar to a field     |
 | relationship   | pointer to type |                                 |
 | primitives     | (see below)     |                                 |
@@ -60,6 +60,17 @@ You will also have to map Concerto's primitive types to your target language typ
 - Integer
 
 For example, for Go, the mapping from Concerto primitives to Go types is as follows:
+
+| Concerto       | Go              |
+|----------------|-----------------|
+| DateTime       | time.Time       |
+| Boolean        | bool            |
+| String         | string          |
+| Double         | float64         |
+| Long           | int64           |
+| Integer        | int32           |
+
+Implemented via a utility method on the code generator class:
 
 ```
 toGoType(type) {
