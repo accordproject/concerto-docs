@@ -11,17 +11,22 @@ Your first task is to ensure you have a good understanding of the [Concerto meta
 
 For example, here is the mapping from the Concerto metamodel to the Go Lang metamodel:
 
-| Concerto      | Go              | Notes                           |
-|---------------|-----------------|---------------------------------|
-| namespace     | package         |                                 |
-| import        | import          |                                 |
-| enum          | type {NAME} int |                                 |
-| concept       | struct          | Concerto super type is embedded |
-| field         | struct field    | Set `json:` for serialization   |
-| enum Value    | struct field    | Set `iota`                      |
-| scalar        | struct field    | Unbox the scalar to a field     |
-| relationship  | pointer to type |                                 |
-| primitives    | (see below)     |                                 |
+| Concerto       | Go              | Notes                           |
+|----------------|-----------------|---------------------------------|
+| namespace      | package         |                                 |
+| import         | import          |                                 |
+| enum           | type {NAME} int |                                 |
+| concept        | struct          | Concerto super type is embedded |
+| field          | struct field    | Set `json:` for serialization   |
+| enum Value     | struct field    | Set `iota`                      |
+| scalar         | struct field    | Unbox the scalar to a field     |
+| relationship   | pointer to type |                                 |
+| primitives     | (see below)     |                                 |
+| decorators     | ignored         |                                 |
+| integer domain | ignored         |                                 |
+| long domain    | ignored         |                                 |
+| double domain  | ignored         |                                 |
+| string regex   | ignored         |                                 |
 
 Depending on your target language's metamodel creating this mapping may be trivial or challenging!
 
