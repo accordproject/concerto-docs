@@ -4,7 +4,7 @@ title: Introduction
 sidebar_position: 0
 ---
 
-Concerto models may be specified using either a [JSON document](./model-metatmodel.md), or using a set of domain-specific language files (the `CTO` format).
+Concerto models may be specified using either a [JSON document](./model-metamodel.md), or using a set of domain-specific language files (the `CTO` format).
 
 Concerto can convert seamlessly between these two formats. Use the `concerto parse` command to convert a CTO string to a JSON model, or the `concerto print` CLI command to convert a JSON model to a CTO string.
 

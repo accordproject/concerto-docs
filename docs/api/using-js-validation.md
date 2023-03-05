@@ -1,16 +1,11 @@
 ---
-id: api-js-examples
-title: JavaScript API Examples
+id: api-js-validation
+title: Validating Data
 ---
 
-## Install the Core Library
+# Validating JSON data and Introspecting a Model
 
-To install the core Concerto library in your project:
-```
-npm install @accordproject/concerto-core --save
-```
-
-## Validating JSON data and Introspecting a Model
+Concerto provides a JSON serialization for instances of a model, and APIs to validate JSON data against a model.
 
 [Run this code on replit](https://replit.com/@dselman/AccordProjectConcerto)
 
