@@ -77,5 +77,5 @@ concept Person identified by email {
 }
 ```
 
-The full reference to the Concerto metamodel is available [online](https://models.accordproject.org/concerto/metamodel@0.4.0.html).
+The full reference to the Concerto metamodel is available [online](https://github.com/accordproject/concerto/blob/main/packages/concerto-metamodel/lib/metamodel.cto).
 
