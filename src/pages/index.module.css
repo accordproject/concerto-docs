@@ -21,3 +21,8 @@
   align-items: center;
   justify-content: center;
 }
+
+
+.buttons a:last-of-type {
+  margin: 20px 36px;
+}
