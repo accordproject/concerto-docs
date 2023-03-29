@@ -23,7 +23,7 @@ function HomeCallToAction() {
       </ActionButton>
       <ActionButton
         type="secondary"
-        href={useBaseUrl('/docs/quick-start')}
+        href={useBaseUrl('/docs/tutorials/quick-start')}
         target="_self">
         Quick Start Tutorial
       </ActionButton>
@@ -58,10 +58,27 @@ Business and product teams are the domain experts, and we believe that they shou
   <br/><br/>
 Popular schema languages are designed to be machine readable, but are not accessible for non-technical people.
   <br/><br/>
-Concerto strives for the expressiveness of UML, but with compatibility with modern technology stacks.
+Concerto strives for the expressiveness of UML, but with compatibility to modern technology stacks.
   `,
   languageConversion: `
-  Import your existing models, or convert Concerto models to 14+ output formats.
+Concerto's code generation capabilities let you use models across multiple platforms. Supported targets include: 
+<a href="/docs/reference/codegen/codegen-avro">Apache Avro</a>,
+<a href="/docs/reference/codegen/codegen-csharp">C# (.NET)</a>,
+<a href="/docs/reference/codegen/codegen-golang">Go</a>,
+<a href="/docs/reference/codegen/codegen-graphql">GraphQL</a>,
+<a href="/docs/reference/codegen/codegen-java">Java</a>,
+<a href="/docs/reference/codegen/codegen-jsonschema">JSON Schema</a>,
+<a href="/docs/reference/codegen/codegen-markdown">Markdown</a>,
+<a href="/docs/reference/codegen/codegen-mermaid">Mermaid UML</a>,
+<a href="/docs/reference/codegen/codegen-odata">OData (EDM)</a>,
+<a href="/docs/reference/codegen/codegen-openapi">OpenAPI</a>,
+<a href="/docs/reference/codegen/codegen-plantuml">PlantUML</a>,
+<a href="/docs/reference/codegen/codegen-protobuf">Protocol Buffers</a>,
+<a href="/docs/reference/codegen/codegen-typescript">TypeScript</a>,
+<a href="/docs/reference/codegen/codegen-xmlschema">XML Schema</a>,
+& custom formats.
+<br /><br />
+Bootstrap your models from existing from <a href="/docs/reference/import/infer-openapi">OpenAPI specifications</a>, <a href="/docs/reference/import/infer-jsonschema">JSON Schema</a> models, or <a href="https://finchbot.net">natural language text</a> such as agreements. 
     `,
   codeExample: `  concept Address {
     o String street
@@ -93,16 +110,12 @@ function CodeSamples(){
     <Tabs>
       <TabItem value="uml" label="UML" default>
         <Mermaid chart={samples.mermaidUml} />
-
       </TabItem>
       <TabItem value="typescript" label="TypeScript">
         <CodeBlock language="typescript" theme="dark">{samples.typescript}</CodeBlock>
       </TabItem>
       <TabItem value="jsonSchema" label="JSON Schema">
         <CodeBlock language="json">{samples.jsonSchema}</CodeBlock>
-      </TabItem>
-      <TabItem value="protobuf" label="Protocol Buffers">
-        <CodeBlock language="protobuf">{samples.protobuf}</CodeBlock>
       </TabItem>
     </Tabs>
   )
@@ -234,7 +247,7 @@ function TwoColumns({columnOne, columnTwo, reverse}) {
 
 function SchemasPeople() {
   return (
-    <Section className="CrossPlatform" background="tint">
+    <Section className="SchemasPeople" background="tint">
       <TwoColumns
         columnOne={
           <TextColumn
@@ -252,7 +265,7 @@ function SchemasPeople() {
 
 function CrossPlatform() {
   return (
-    <Section className="NativeApps" background="light">
+    <Section className="CrossPlatform" background="light">
       <TwoColumns
         reverse
         columnOne={
@@ -283,7 +296,7 @@ function GetStarted() {
             <p>Read these</p>
             <ActionButton
               type="primary"
-              href={useBaseUrl('/docs/quick-start')}
+              href={useBaseUrl('/docs/tutorials/quick-start')}
               target="_self">
               Quick Start Tutorial
             </ActionButton>

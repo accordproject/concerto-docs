@@ -43,6 +43,8 @@
   --ifm-transition-slow: 0;
   --ifm-pre-line-height: 1.5;
   --ifm-tabs-padding-vertical: 6px;
+  --ifm-menu-link-padding-horizontal: 0.75rem;
+  --ifm-menu-link-padding-vertical: 0.375rem;
   --ifm-color-warning: #ffe564;
   --ifm-alert-border-width: 0;
   --ifm-alert-border-radius: 0;
@@ -328,72 +330,76 @@
   }
 }
 
-/* Native Apps */
+/* Cross Platform */
 
-.NativeApps {
+.CrossPlatform {
   overflow: hidden;
 }
 
 @media only screen and (max-width: 960px) {
-  .NativeApps .column.last {
+  .CrossPlatform .column.last {
     max-height: 300px;
   }
 }
 
 @media only screen and (min-width: 481px) and (max-width: 960px) {
-  .NativeApps .column.last {
+  .CrossPlatform .column.last {
     width: 66.7%;
     margin: 0 auto;
   }
 }
 
 @media only screen and (min-width: 961px) {
-  .NativeApps {
+  .CrossPlatform {
     max-height: 800px;
-    overflow-y: scroll;
   }
 
   /* Correct for whitespace in the image of phones */
-  .NativeApps .column.left {
+  .CrossPlatform .column.left {
     margin-top: -25px;
+  }
+
+  .CrossPlatform .prism-code {
+    margin-top: -25px;
+    overflow-y: scroll;
   }
 }
 
-/* Native Code */
+/* Schemas for People */
 
-.CrossPlatform .column.last {
+.SchemasPeople .column.last {
   margin-bottom: -50px;
 }
 
-.CrossPlatform pre {
+.SchemasPeople pre {
   margin: 0;
 }
 
-.CrossPlatform .prism-code {
+.SchemasPeople .prism-code {
   border-radius: 0;
   font-size: 80%;
   background-color: #282c34;
 }
 
 @media only screen and (max-width: 480px) {
-  .CrossPlatform .column.last {
+  .SchemasPeople .column.last {
     width: 100%;
     padding: 0;
     overflow-x: hidden;
   }
 
-  .CrossPlatform .prism-code {
+  .SchemasPeople .prism-code {
     font-size: 10px;
     padding: 1.25rem 1.25rem;
   }
 }
 
 @media screen and (min-width: 481px) and (max-width: 960px) {
-  .CrossPlatform .TwoColumns {
+  .SchemasPeople .TwoColumns {
     grid-gap: 2rem;
   }
 
-  .CrossPlatform .column.last {
+  .SchemasPeople .column.last {
     width: 100%;
     padding: 0;
     background-color: var(--dark);
@@ -401,7 +407,7 @@
     overflow-y: scroll;
   }
 
-  .CrossPlatform .prism-code {
+  .SchemasPeople .prism-code {
     width: 30rem;
     margin: 0 auto;
     padding: 1.25rem 0rem;
@@ -409,14 +415,14 @@
 }
 
 @media only screen and (min-width: 961px) {
-  .CrossPlatform .TwoColumns .column.right {
+  .SchemasPeople .TwoColumns .column.right {
     /* Make flush with top and bottom */
     margin-top: -50px;
     /* Get rid of default left padding */
     padding-left: 0;
   }
 
-  .CrossPlatform .column.right .prism-code {
+  .SchemasPeople .column.right .prism-code {
     /* Bleed background into the right */
     margin-right: -9999px;
     padding: 16px 1.5rem;

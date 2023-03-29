@@ -388,7 +388,7 @@ public class ServiceLevelAgreement : Concept {
   }
   `,
   protobuf: `
-  syntax = "proto3";
+ssyntax = "proto3";
 
 package org.example.sla.v0_0_2;
 
