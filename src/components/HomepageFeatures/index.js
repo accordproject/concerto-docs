@@ -78,7 +78,7 @@ Concerto's code generation capabilities let you use models across multiple platf
 <a href="/docs/reference/codegen/codegen-xmlschema">XML Schema</a>,
 & custom formats.
 <br /><br />
-Bootstrap your models from existing from <a href="/docs/reference/import/infer-openapi">OpenAPI specifications</a>, <a href="/docs/reference/import/infer-jsonschema">JSON Schema</a> models, or <a href="https://finchbot.net">natural language text</a> such as agreements. 
+Bootstrap your models from existing <a href="/docs/reference/import/infer-openapi">OpenAPI specifications</a>, <a href="/docs/reference/import/infer-jsonschema">JSON Schema</a> models, or <a href="https://finchbot.net">natural language text</a> such as agreements. 
     `,
   codeExample: `  concept Address {
     o String street
