@@ -53,7 +53,7 @@ Examples of breaking changes:
 - Making a breaking change to a parent declaration
 - Adding a new required property
 
-Use the `concerto compare` [command line utility](./ref-concerto-cli.md) to compare two Concerto models to determine whether they are compatible.
+Use the `concerto compare` [command line utility](/docs/tools/ref-concerto-cli.md) to compare two Concerto models to determine whether they are compatible.
 
 # Considerations for Persistence
 
