@@ -27,7 +27,7 @@ This are frequently business glossaries, ontologies, or vocabularies (set of agr
 
 ### Platform Independent Model (PIM)
 
-Platform Independent Models may serve as a pivot model between CIM models and PSM models. Concerto is a good example of a PIM modelling language; designed to capture the details of a domain in sufficient detail that useful platform specific code can be generated from the model, or the model could be related to [vocabulary terms](./vocabulary.md).
+Platform Independent Models may serve as a pivot model between CIM models and PSM models. Concerto is a good example of a PIM modelling language; designed to capture the details of a domain in sufficient detail that useful platform specific code can be generated from the model, or the model could be related to [vocabulary terms](/docs/design/vocabulary).
 
 ### Platform Specific Model (PSM)
 

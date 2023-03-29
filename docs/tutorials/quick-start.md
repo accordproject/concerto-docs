@@ -53,7 +53,7 @@ Options:
 
 ## Create your first Concerto model
 
-> Note, if you use the VSCode IDE you can install the [Accord Project (Concerto) extension](./vscode.md) to benefit from syntax highlighting, compilation, and more.
+> Note, if you use the VSCode IDE you can install the [Accord Project (Concerto) extension](/docs/tools/vscode) to benefit from syntax highlighting, compilation, and more.
 
 Open a code or text editor and create a plain text file, with the contents:
 
@@ -142,4 +142,4 @@ The output should now be:
 
 Well done, you've created your first Concerto model and used the CLI to validate data against the model! This is just the start...
 
-You may want to continue to read about [static code generation](./category/code-generation), or using the [JavaScript runtime API](./api/using-js-validation.md) to introspect models at runtime.
+You may want to continue to read about [static code generation](./category/code-generation), or using the [JavaScript runtime API](/docs/reference/api/api-js-validation) to introspect models at runtime.

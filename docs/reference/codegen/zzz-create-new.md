@@ -7,7 +7,7 @@ If you are an intermediate JavaScript developer it is easy to define your own co
 
 ## Metamodel Mapping
 
-Your first task is to ensure you have a good understanding of the [Concerto metamodel](../specification/model-metamodel.md), as your will need to map **all** the elements of the Concerto metamodel to elements in your target language's metamodel.
+Your first task is to ensure you have a good understanding of the [Concerto metamodel](/docs/category/specification), as your will need to map **all** the elements of the Concerto metamodel to elements in your target language's metamodel.
 
 For example, here is the mapping from the Concerto metamodel to the Go Lang metamodel:
 

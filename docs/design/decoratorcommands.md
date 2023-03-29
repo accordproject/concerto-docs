@@ -10,7 +10,7 @@ Decorator Commands can add/update/remove decorators to targeted elements in the 
 
 Decorator Command Sets are useful to dynamically decorate your models, keeping the models clean, whilst exposing decorated model elements to clients. 
 
-For example, you can decorate a model with [Vocabulary](./vocabulary.md) terms by requesting that the `VocabularyManager` convert the vocabulary to a Decorator Command Set, which can then be applied to the model.
+For example, you can decorate a model with [Vocabulary](/docs/design/vocabulary) terms by requesting that the `VocabularyManager` convert the vocabulary to a Decorator Command Set, which can then be applied to the model.
 
 ```js
 // generate decorators for the 'en-GB' locale
