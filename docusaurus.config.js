@@ -124,7 +124,7 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Accord Project. Built with Docusaurus.`,
       },
       prism: {
-        theme: lightCodeTheme,
+        theme: darkCodeTheme,
         darkTheme: darkCodeTheme,
         additionalLanguages: ['csharp']
       },
