@@ -18,6 +18,10 @@ Allowed data types -
 bool,byte,char,decimal,double,float,int,long,nint,nuint,sbyte,short,string,uint,ulong,ushort
 ```
 
+>  Note: The CSharp codegen performs a check to ensure that the configured data type is among the allowed data types, but it doesn't verify compatibility between the configured CTO type and .NET type. 
+
+* ** @AcceptedValue("") **- this decorator can be used to configure custom value for an enum field.
+
 Eg, test.cto
 ```
 namespace test@1.0.0
@@ -29,9 +33,14 @@ concept Person identified by email {
   @DotNetType("decimal")
   o Double currencyValue
 }
-```
 
->  Note: The CSharp codegen performs a check to ensure that the configured data type is among the allowed data types, but it doesn't verify compatibility between the configured CTO type and .NET type. 
+enum RenewalType {
+  @AcceptedValue("automatic renewal")
+  o AutomaticRenewal
+  @AcceptedValue("optional renewal")
+  o OptionalRenewal
+}
+```
 
 ## Sample Output
 
@@ -51,6 +60,14 @@ public class Person : Concept {
    [System.Text.Json.Serialization.JsonPropertyName("currencyValue")]
    public decimal CurrencyValue { get; set; }
 }
+
+[System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
+public enum RenewalType {
+   [System.Runtime.Serialization.EnumMember(Value = "automatic renewal")]
+   AutomaticRenewal,
+   [System.Runtime.Serialization.EnumMember(Value = "optional renewal")]
+   OptionalRenewal,
+}
 ```
 
 ## Options
@@ -59,6 +76,7 @@ public class Person : Concept {
 - useNewtonsoftJson: compile for Newtonsoft.Json library
 - namespacePrefix: a prefix to add to all namespaces
 - pascalCase: use PascalCase for generated identifier names
+- enableReferenceType: use enableReferenceType to add only the identifier of the relationship property instead of embedding the entire class
 
 ## Limitations
 
