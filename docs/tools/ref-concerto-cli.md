@@ -50,7 +50,6 @@ Options:
       --utcOffset   set UTC offset                                      [number]
       --offline     do not resolve external models    [boolean] [default: false]
       --functional  new validation API                [boolean] [default: false]
-      --ergo        validation and emit for Ergo      [boolean] [default: false]
 ```
 
 ### Example
