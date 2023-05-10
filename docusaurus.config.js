@@ -129,9 +129,9 @@ const config = {
         additionalLanguages: ['csharp']
       },
       algolia: {
-        appId: 'ZJRJ9BVJ83',
-        apiKey: 'f5ac6c043d34d577568dcb3923e1af33',
-        indexName: 'accordproject_concerto',
+        appId: "NMKG3P775K",
+        apiKey: "ca1a2245aa4632ef8f6fd820d72c2cd6",
+        indexName: "concerto-accordproject",
         algoliaOptions: {} // Optional, if provided by Algolia
       },    
     }),
