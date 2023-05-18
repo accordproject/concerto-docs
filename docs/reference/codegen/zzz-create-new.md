@@ -181,7 +181,7 @@ The existing code generators use a battery of unit tests to ensure 100% code cov
 
 ## Expose via Concerto CLI
 
-To allow your code generator to be used with the Concerto CLI your code generator must assigned a target name and added to the [CodeGen module](https://github.com/accordproject/concerto/blob/main/packages/concerto-tools/lib/codegen/codegen.js).
+To allow your code generator to be used with the Concerto CLI your code generator must assigned a target name and added to the [CodeGen module](https://github.com/accordproject/concerto-codegen#readme).
 
 ## Contribute Back!
 
