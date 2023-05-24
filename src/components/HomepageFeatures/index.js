@@ -74,6 +74,7 @@ Concerto's code generation capabilities let you use models across multiple platf
 <a href="/docs/reference/codegen/codegen-openapi">OpenAPI</a>,
 <a href="/docs/reference/codegen/codegen-plantuml">PlantUML</a>,
 <a href="/docs/reference/codegen/codegen-protobuf">Protocol Buffers</a>,
+<a href="/docs/reference/codegen/codegen-rust">Rust</a>,
 <a href="/docs/reference/codegen/codegen-typescript">TypeScript</a>,
 <a href="/docs/reference/codegen/codegen-xmlschema">XML Schema</a>,
 & custom formats.
