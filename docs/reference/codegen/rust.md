@@ -47,4 +47,4 @@ None.
 ## Limitations
 
 1. Concerto references (e.g. `--> Organization shipper`) will need to be manually resolved in Rust, if the underlying `struct` needs to fully evaulated.
-2. Only supports Concerto models up to version 3.8.0.
+2. Rust code generation doesn't support length validation on String fields.
