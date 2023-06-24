@@ -90,6 +90,16 @@ declarations:
 
 As you can see in the vocabularies above, a vocabulary can supplement or override terms from a base vocabulary, as is the case of the `en-gb` vocabulary which redefines and adds terms specific to British English over the generic English `en` vocabulary.
 
+## Creating a boostrap Vocabulary file
+
+Use the following command to generate a bootstrap Vocabulary file in English Language. This file will give a boilerplate format for the Vocabulary YAML file. This file can be edited to any description that is required or any language that is required.
+
+```
+concerto compile --model test.cto --target vocabulary
+```
+
+Please refer to [Vocabulary Code Generation](/docs/reference/codegen/vocabulary.md) for more information.
+
 ## API Usage
 
 Use the `VocabularyManager` classs to define new vocabularies, retrieve terms for a locale, or to validate
