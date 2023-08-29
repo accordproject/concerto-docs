@@ -122,6 +122,7 @@ function CodeSamples(){
   )
 }
 
+/*Adjust the Svg property with current files*/
 const FeatureList = [
   {
     title: 'Easy to Use',

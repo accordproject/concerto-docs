@@ -1,11 +1,13 @@
 .features {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  /*changed the padding to adjust to the new feature svgs*/
+  padding: 3rem 0 2rem 0;
   width: 100%;
 }
 
 .featureSvg {
-  height: 200px;
-  width: 200px;
+  /*adjust the size for the new svgs*/
+  height: 100px;
+  width: 100px;
 }
