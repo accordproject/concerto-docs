@@ -31,11 +31,11 @@ For reference, here are some of the areas that must be updated when new features
 | https://models.accordproject.org | Publish the metamodel to the web. |
 | concerto-cto | CTO grammar changes to create AST. Convert AST back to CTO. |
 | concerto-core/introspect | Create runtime classes from AST and implement semantic validation, imports etc. |
-| concerto-core/serializer | Serialize to/from JSON |
+| concerto-core/serializer | Serialize to/from JSON, Generate sample data. |
 | concerto-core/Introspector | Update high-level introspection APIs |
 | concerto-analysis | Implement change analysis |
 | concerto-vocabulary | Generate Decorator Commands used for vocabulary terms |
 | concerto-codegen | Update dependencies. Update all code generation targets |
-| concerto-docs | Document metamodel changes, update code samples, code generation docs |
+| concerto-docs | Document metamodel changes, update code samples, review code generation docs |
 | concerto-cli | Update dependencies. |
 | concerto-types | Update TypeScript types. |
