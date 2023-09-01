@@ -39,3 +39,4 @@ For reference, here are some of the areas that must be updated when new features
 | concerto-docs | Document metamodel changes, update code samples, review code generation docs |
 | concerto-cli | Update dependencies. |
 | concerto-types | Update TypeScript types. |
+| vscode-web-extension | Update syntax highlighting |
