@@ -60,8 +60,8 @@ The example below validates that a `String` variable starts with `abc`:
 
 ```  
   o String stringLengthWithMinMaxLength length=[1,100] // greater than or equal to 1 and less than or equal to 100
-  o String stringLengthWithMinLength range=[1,] // greater than or equal to 1
-  o String stringLengthWithMaxLength range=[,100] // less than or equal to 100
+  o String stringLengthWithMinLength length=[1,] // greater than or equal to 1
+  o String stringLengthWithMaxLength length=[,100] // less than or equal to 100
 ```
 
 `Double`, `Long` or `Integer` fields may include an optional range expression, which is used to validate the contents of the field. Both the lower and upper bound are optional, however at least one must be specified. The upper bound must be greater than or equal to the lower bound.
