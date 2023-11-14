@@ -287,3 +287,21 @@ Options:
                                                       [boolean] [default: false]
 ```
 
+## concerto decorate
+`concerto decorate` allows you to apply decorators and vocabularies to a list of models
+```md
+concerto decorate
+apply the decorators and vocabs to the target models from given list of dcs files and vocab files
+Options:
+      --models                 The file location of the source models
+                                                              [array] [required]
+      --decorator              The file location of decorators to be applied
+                                                                         [array]
+      --vocabulary             The file location of vocabularies to be applied
+                                                                         [array]
+      --format                 The output format for models (cto or json)
+                                                         [string] [default: cto]
+      --output                 The output directory path where you want your
+                               generated models to be stored
+                                                                        [string]
+```
