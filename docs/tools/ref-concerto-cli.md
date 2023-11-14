@@ -288,7 +288,7 @@ Options:
 ```
 
 ## concerto decorate
-`concerto decorate` allows you to apply decorators and vocabularies to a model
+`concerto decorate` allows you to apply decorators and vocabularies to a list of models
 
 ```md
 concerto decorate 
