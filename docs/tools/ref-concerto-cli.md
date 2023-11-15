@@ -305,3 +305,21 @@ Options:
                                generated models to be stored
                                                                         [string]
 ```
+
+## concerto extract-decorators
+`concerto extract-decorators` allows you to extract the decorator command sets and vocabularies from a list of model files and optionally remove those decorators from source models.
+```md
+concerto extract-decorators
+apply the decorators and vocabs to the target models from given list of dcs files and vocab files
+Options:
+      --models                      The file location of the source models
+                                                              [array] [required]
+      --locale                      The locale for extracted vocabularies
+                                                          [string] [default: en]
+      --removeDecoratorsFromSource  The flag to determine whether to remove
+                                    decorators from source
+                                                       [boolean] [default: false]
+      --output                 The output directory path where you want your
+                               generated models to be stored
+                                                        [string] [default :output]
+```
