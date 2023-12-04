@@ -115,8 +115,8 @@ At the moment, the available target formats are as follows:
 - OData: `concerto compile --model modelfile.cto --target OData`
 - Mermaid: `concerto compile --model modelfile.cto --target Mermaid`
 - Markdown: `concerto compile --model modelfile.cto --target Markdown`
-- Vocabulary: `concerto compile --model modelfile.cto --target Vocabulary`
 - Rust: `concerto compile --model modelfile.cto --target Rust`
+- Vocabulary: `concerto compile --model modelfile.cto --target Vocabulary`
 
 ### Example
 For example, using the `compile` command to export the `clause.cto` file from a [Late Delivery and Penalty](https://github.com/accordproject/cicero-template-library/tree/master/src/latedeliveryandpenalty) clause into `Go Lang` format:
