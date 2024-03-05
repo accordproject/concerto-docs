@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^2.4.1",
+    "@types/node": "^20.11.24",
     "jsdoc-to-markdown": "^8.0.0"
   },
   "browserslist": {
