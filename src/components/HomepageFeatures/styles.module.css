@@ -10,4 +10,13 @@
   /*adjust the size for the new svgs*/
   height: 100px;
   width: 100px;
+  stroke-width: 0.08px;
+  fill: #f5f6f7;
+  stroke: #f5f6f7;
+}
+
+/* Dark mode */
+[data-theme='light'] .featureSvg {
+  fill: #1C1E21;
+  stroke: #1C1E21; /* Change color in dark mode */
 }
