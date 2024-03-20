@@ -15,7 +15,7 @@
   stroke: #f5f6f7;
 }
 
-/*Light mode*/
+/*Light mode */
 [data-theme='light'] .featureSvg {
   fill: #1C1E21;
   stroke: #1C1E21; /*Change color in light mode*/
