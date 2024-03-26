@@ -52,7 +52,8 @@ const config = {
         title: 'Concerto',
         logo: {
           alt: 'Concerto Logo',
-          src: 'img/logo.png',
+          src: 'img/logo_light.png', // Default logo for light mode
+          srcDark: 'img/logo_dark.png', // Logo for dark mode
         },
         items: [
           {
