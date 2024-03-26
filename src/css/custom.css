@@ -83,6 +83,12 @@
   text-decoration: underline;
 }
 
+/* mouse over link */
+.footer a:hover { 
+  color: var(--brand); 
+  text-decoration: underline;
+}
+
 /* selected link */
 .markdown a:active {
   color: #bb1122;
