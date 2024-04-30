@@ -46,13 +46,22 @@ We guarantee to support values that are included by the ISO 8601-1:2019, RFC 333
 | `default` | declares a default value for the property, if no value is specified|
 | `range` | declares a valid range for numeric properties|
 | `regex` | declares a validation regex for string properties|
+| `length` | declares a minimum and maximum char length for string properties|
 
 `String` fields may include an optional regular expression, which is used to validate the contents of the field. Careful use of field validators allows Concerto to perform rich data validation, leading to fewer errors and less boilerplate application code.
 
 The example below validates that a `String` variable starts with `abc`:
 
 ```
-  o String myString regex=/abc.*/ 
+  o String myString regex=/abc.*/
+```
+
+`String` fields may also include an optional length expression, which is used to validate the number of characters in the string field. Both the minimum and maximum length bound are optional, however at least one must be specified. The maxLength must be greater than or equal to the minLength.
+
+```  
+  o String stringLengthWithMinMaxLength length=[1,100] // greater than or equal to 1 and less than or equal to 100
+  o String stringLengthWithMinLength length=[1,] // greater than or equal to 1
+  o String stringLengthWithMaxLength length=[,100] // less than or equal to 100
 ```
 
 `Double`, `Long` or `Integer` fields may include an optional range expression, which is used to validate the contents of the field. Both the lower and upper bound are optional, however at least one must be specified. The upper bound must be greater than or equal to the lower bound.
@@ -75,7 +84,7 @@ The example below validates that a `String` variable starts with `abc`:
 
 ```
 asset Vehicle {
-  o String model default="F150"
+  o String model default="F150" length=[1,100]
   o String make default="FORD"
   o Integer year default=2016 range=[1990,] optional // model year must be 1990 or higher
   o String V5cID regex=/^[A-z][A-z][0-9]{7}/
