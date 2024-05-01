@@ -5,12 +5,14 @@ sidebar_position: 9
 ---
 A Map is a type which models data as key-value pairs. Conceptually, it relates closely to a Map type in Javascript or C#.
 
-## Supported Keys
+To enable this feature in Concerto 3.x , set an environment variable of `ENABLE_MAP_TYPE='true'` or provide `enableMapType` as an option to the `Concerto ModelManager`.
+
+## Supported Key Types
 
 - Primitives: String, DateTime
 - Scalars: String, DateTime
 
-## Supported Values
+## Supported Value Types
 
 - Primitives: String, DateTime, Integer, Long, Double, Boolean
 - Scalars: String, Integer, Long, Double, Boolean
@@ -18,8 +20,8 @@ A Map is a type which models data as key-value pairs. Conceptually, it relates c
 
 ```
 map <name> {
-    o <required Concerto type> 
-    o <required Concerto type>
+    o <required Concerto Key Type> 
+    o <required Concerto Value Type>
 } 
 ```
 
