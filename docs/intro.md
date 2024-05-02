@@ -49,7 +49,7 @@ And here is the **generated** Plant UML diagram for the model:
 
 🔎 Runtime introspection of the model using a powerful set of APIs
 
-🎛 Convert the model to [14+ common data model formats](https://concerto.accordproject.org/docs/category/code-generation) 
+🎛 Convert the model to [14+ common data model formats](https://concerto.accordproject.org/docs/category/code-generation)
 
 🕸 Publish your reusable models to any website, including the Accord Project [model repository](https://models.accordproject.org)
 
