@@ -30,9 +30,9 @@ Example:
 ```js
 namespace org.acme.hr@1.0.0
 
-map Rolodex  {
-    o String
-    o String
+map Checklist {
+  o String
+  o Boolean
 }
 ```
 
