@@ -40,11 +40,11 @@ Types used in a Map may be imported from external namespaces in a manner similar
 
 ```js
 namespace org.acme.hr@1.0.0 
-import com.my.cool@1.0.0.Thing
+import com.my.cool@1.0.0.Activity
 
-map Rolodex  {
-    o String
-    o Thing
+map Timeline {
+  o DateTime
+  o Activity
 }
 ```
 
