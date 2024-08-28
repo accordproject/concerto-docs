@@ -49,6 +49,9 @@ concept Person{
 }
 ```
 
+**Note:** Aliasing is disabled by default in concerto. To enable aliasing set `importAliasing=true`.
+
+
 ## Strict:false mode
 
 For backwards compatability, and when running with `strict:false` imports may import types from unversioned namespaces, or may import all types in a namespace. 
