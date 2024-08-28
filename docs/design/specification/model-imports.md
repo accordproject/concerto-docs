@@ -35,6 +35,20 @@ Imports using a `from` declaration can be downloaded into the model manager by c
 
 The Model Manager will resolve all imports to ensure that the set of declarations that have been loaded are globally consistent. 
 
+## Aliasing imported types
+
+Imported types can also be aliased to local names. Aliasing is only allowed using the `{}` syntax. Aliased and non-aliased types can be mixed within the same import statement, as demonstrated in the example below
+```js
+
+import org.accordproject.address@1.0.0.{PostalAddress as pa, Country}
+
+concept Person{
+    o String name
+    o pa address optional
+    o Country country
+}
+```
+
 ## Strict:false mode
 
 For backwards compatability, and when running with `strict:false` imports may import types from unversioned namespaces, or may import all types in a namespace. 
