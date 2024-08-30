@@ -49,7 +49,7 @@ concept Person{
 }
 ```
 
-**Note:**  Aliasing is disabled by default in concerto. To enable this feature in Concerto, provide importAliasing as an option to the Concerto ModelManager constructor.
+**Note:**  Aliasing is disabled by default in concerto. To enable this feature in Concerto, set environment variable `IMPORT_ALIASING='true'` or provide `importAliasing` as an option to the Concerto ModelManager constructor.
 
 
 ## Strict:false mode
