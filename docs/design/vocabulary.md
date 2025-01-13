@@ -4,11 +4,14 @@ title: Vocabulary
 sidebar_position: 5
 ---
 
-The Vocabulary module for Concerto optionally allows human-readable labels (Terms) to be associated with model elements. Terms are stored within a locale specific vocabulary YAML file associated with a Concerto namespace.
+
+The Vocabulary module for Concerto optionally allows human-readable labels (Terms) to be associated with model elements. Terms are stored within a locale-specific vocabulary YAML file associated with a Concerto namespace.
 
 For example, a Concerto model that defines an enumeration with the values `RED`, `GREEN`, `BLUE` can be associated with an English vocabulary with the terms "Red", "Green", "Blue" and a French Vocabulary with terms "Rouge", "Vert", "Bleue".
 
-The `VocabularyManager` class manages access to a set of Vocabulary files, and includes logic to retrieve the most appropriate term for a requested locale.
+The `VocabularyManager` class manages access to a set of Vocabulary files and includes logic to retrieve the most appropriate term for a requested locale. 
+
+Additionally, it now supports associating multiple terms with the same concept or property, allowing for use cases such as short descriptions, long descriptions, tooltips, and more.
 
 ### Example Model
 
@@ -39,25 +42,52 @@ asset Truck extends Vehicle {
 locale: en
 namespace: org.acme
 declarations:
-  - Color: A color
-  - Vehicle: A road vehicle
-    properties:
-      - vin: Vehicle Identification Number
-      - model: Model of the vehicle
-  - Truck: A vehicle capable of carrying cargo
-    properties:
-      - weight: The weight of the truck in KG
+  - Color:
+      terms:
+        short: "A color"
+        long: "A color representing a visible wavelength of light."
+  - Vehicle:
+      terms:
+        short: "A road vehicle"
+        long: "A machine used for transporting people or goods."
+      properties:
+        - vin:
+            terms:
+              short: "VIN"
+              tooltip: "Vehicle Identification Number"
+        - model:
+            terms:
+              short: "Model"
+              tooltip: "Model of the vehicle"
+  - Truck:
+      terms:
+        short: "A truck"
+        tooltip: "A vehicle capable of carrying cargo"
+      properties:
+        - weight:
+            terms:
+              short: "Weight"
+              long: "The weight of the truck in kilograms."
 ```
 
 #### British English - en-gb
 
 ``` yaml
-locale: en-gb
+ocale: en-gb
 namespace: org.acme
 declarations:
-  - Truck: A lorry (a vehicle capable of carrying cargo)
-  - Color: A colour
-  - Milkfloat
+  - Truck:
+      terms:
+        short: "A lorry"
+        tooltip: "A lorry capable of carrying cargo."
+  - Color:
+      terms:
+        short: "A colour"
+        long: "A hue or shade of light visible to the eye."
+  - Milkfloat:
+      terms:
+        short: "A milk float"
+        tooltip: "An electric vehicle used for delivering milk."
 ```
 
 #### French - fr
@@ -66,9 +96,15 @@ declarations:
 locale: fr
 namespace: org.acme
 declarations:
-  - Vehicle: Véhicule
-    properties:
-      - vin: Le numéro d'identification du véhicule (NIV)
+  - Vehicle:
+      terms:
+        short: "Véhicule"
+        long: "Un moyen de transport routier."
+      properties:
+        - vin:
+            terms:
+              short: "NIV"
+              tooltip: "Numéro d'identification du véhicule"
 ```
 
 #### Simplified Chinese zh-cn
@@ -77,15 +113,29 @@ declarations:
 locale: zh-cn
 namespace: org.acme
 declarations:
-  - Color: 颜色
-    properties:
-    - RED: 红色
-    - GREEN: 绿色
-    - BLUE: 蓝色
-  - Vehicle: 车辆
-    properties:
-      - vin: 车辆识别代号
-      - color: 颜色
+  - Color:
+      terms:
+        short: "颜色"
+        long: "一种可见光的波长。"
+      properties:
+        - RED:
+            terms:
+              short: "红色"
+              tooltip: "一种颜色的名字"
+        - GREEN:
+            terms:
+              short: "绿色"
+        - BLUE:
+            terms:
+              short: "蓝色"
+  - Vehicle:
+      terms:
+        short: "车辆"
+        long: "一种用于运输人或货物的机器。"
+      properties:
+        - vin:
+            terms:
+              short: "车辆识别号"
 ```
 
 As you can see in the vocabularies above, a vocabulary can supplement or override terms from a base vocabulary, as is the case of the `en-gb` vocabulary which redefines and adds terms specific to British English over the generic English `en` vocabulary.
@@ -102,14 +152,16 @@ Please refer to [Vocabulary Code Generation](/docs/reference/codegen/vocabulary.
 
 ## API Usage
 
-Use the `VocabularyManager` classs to define new vocabularies, retrieve terms for a locale, or to validate
-a vocabulary using a `ModelManager`.
+Use the `VocabularyManager` classs to define new vocabularies, retrieve terms for a locale, or to validate a vocabulary using a `ModelManager`.
 
 ### Adding a Vocabulary
 
 Load the YAML file for the Vocabulary and add it to a `VocabularyManager`:
 
 ```
+const VocabularyManager = require('concerto-vocabulary');
+const fs = require('fs');
+
 vocabularyManager = new VocabularyManager();
 const enVocString = fs.readFileSync('./test/org.acme_en.voc', 'utf-8');
 vocabularyManager.addVocabulary(enVocString);
@@ -122,13 +174,15 @@ a declaration or property within a namespace:
 
 
 ```
-const term = vocabularyManager.getTerm('org.acme', 'en-gb', 'Color');
-// term.should.equal('A colour');
+const shortTerm = vocabularyManager.getTerm('org.acme', 'en-gb', 'Color', { termType: 'short' });
+// shortTerm.should.equal('A colour');
+
 ```
 
 ```
-const term = vocabularyManager.getTerm('org.acme', 'en-gb', 'Vehicle', 'vin');
-// term.should.equal('Vehicle Identification Number');
+const tooltip = vocabularyManager.getTerm('org.acme', 'en', 'Vehicle', 'vin', { termType: 'tooltip' });
+// tooltip.should.equal('Vehicle Identification Number');
+
 ```
 
 ### Resolve a Term using ModelManager Type Hierarchy
@@ -141,7 +195,7 @@ based on the type hierarchy defined by a `ModelManager`. In the example below, t
 modelManager = new ModelManager();
 const model = fs.readFileSync('./test/org.acme.cto', 'utf-8');
 modelManager.addModelFile(model);
-const term = vocabularyManager.resolveTerm(modelManager, 'org.acme', 'en-gb', 'Truck', 'vin');
+const term = vocabularyManager.resolveTerm(modelManager, 'org.acme', 'en-gb', 'Truck', 'vin', { termType: 'tooltip' });
 // term.should.equal('Vehicle Identification Number');
 ```
 
@@ -167,5 +221,6 @@ const result = vocabularyManager.validate(modelManager);
 // result.vocabularies['org.acme/zh-cn'].missingTerms.should.have.members(['Truck']);
 // result.vocabularies['org.acme/zh-cn'].additionalTerms.should.have.members([]);
 ```
+By allowing multiple terms for concepts and properties, Concerto now supports advanced use cases such as multilingual tooltips, detailed descriptions, and more intuitive application interfaces.
 
 Please refer to the [JavaScript API](/docs/reference/api/ref-concerto-js-api) for the `concerto-vocabulary` module for detailed API guidance.
