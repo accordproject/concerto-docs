@@ -172,7 +172,6 @@ vocabularyManager.addVocabulary(enVocString);
 Use the `getTerm` method on the `VocabularyManager` to retrieve a term for
 a declaration or property within a namespace:
 
-
 ```
 const shortTerm = vocabularyManager.getTerm('org.acme', 'en-gb', 'Color', { termType: 'short' });
 // shortTerm.should.equal('A colour');
