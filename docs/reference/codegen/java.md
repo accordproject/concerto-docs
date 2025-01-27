@@ -51,7 +51,17 @@ public class Person extends Concept {
 
 ## Options
 
-None.
+- customPackages: If you want to specify custom packages for generated Java classes (for example, to follow a specific directory structure), you can define the base package.
+
+### Example
+
+To specify a custom package, use the following command:
+
+```base
+concerto compile --model test.cto --target java --customPackages com.example.project
+```
+
+This will generate Java classes under the `com.example.project` package.
 
 ## Limitations
 
