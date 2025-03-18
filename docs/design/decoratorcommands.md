@@ -66,7 +66,7 @@ const decoratedModelManager = DecoratorManager.decorateModels( testModelManager,
 ```
 
 The Decorator Command Set below defines three decorator commands:
-1. Upset (update/insert) the `@Form("inputType", "text")` decorator to all properties on type `String`
+1. Upsert (update/insert) the `@Form("inputType", "text")` decorator to all properties on type `String`
 2. Append the `@New` decorator to all properties of type `String`
 3. Upsert the `@Form("inputType", "textArea")` decorator to the `test.Person.bio` property
 
