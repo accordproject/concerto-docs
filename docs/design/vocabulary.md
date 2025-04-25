@@ -90,6 +90,16 @@ declarations:
 
 As you can see in the vocabularies above, a vocabulary can supplement or override terms from a base vocabulary, as is the case of the `en-gb` vocabulary which redefines and adds terms specific to British English over the generic English `en` vocabulary.
 
+In addition to the default `@Term` annotation, the `@Term_{vocabularyKey}` annotation allows you to define terms using custom vocabulary keys, supporting multiple alternative vocabularies.
+
+To avoid conflicts in the generated vocabulary YAML, the following keys are restricted:
+
+```
+Namespace level: "namespace", "locale", "declarations"
+Declaration level: "properties", declaration’s own name (e.g., Vehicle, Color)
+Property level: property's own name (e.g., vin, weight)
+```
+
 ## Creating a boostrap Vocabulary file
 
 Use the following command to generate a bootstrap Vocabulary file in English Language. This file will give a boilerplate format for the Vocabulary YAML file. This file can be edited to any description that is required or any language that is required.
