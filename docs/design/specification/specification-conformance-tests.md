@@ -1,9 +1,9 @@
 # Concerto Conformance test suite
 ## About
 1. The Concerto Conformance Test Suite is a cross-language validation tool designed to test the semantic correctness of Accord Project's Concerto modeling language.   
-2. It ensures that any modifications to core components like the Parser, ModelFile, or ModelManager continue to comply with a defined set of semantic validation rules.  
+2. It ensures that any modifications to core components like the ModelFile, or ModelManager continue to comply with a defined set of semantic validation rules.  
 3. It currently supports JavaScript, with the ability to test across multiple implementations of Concerto such as Rust, C# and many others.  
-4. For running conformance tests against implementations of Concerto in different languages you only need the step file in the respective language.  
+4. For running conformance tests against implementations of Concerto in different languages you would only need the step file for the respective language.  
 
 ## What it does?
 1. **Defines Semantic Rules**:
@@ -27,7 +27,7 @@ Uses a dynamic loader to import target implementations of ModelFile, and ModelMa
 Can be integrated into the CI/CD pipeline of any target project to run conformance tests automatically on each commit/PR.
 
 
-# Semantic Validation Rules:
+## Semantic Validation Rules:
 
 | Rule Name | Description |
 |-----------|-------------|
@@ -63,7 +63,7 @@ Can be integrated into the CI/CD pipeline of any target project to run conforman
 | STRING_VALIDATOR_004 | If regex defined it must be valid |
 
 ## Why it's needed?
-Maintaining a language like Concerto involves frequent updates to its core features like parser, modelmanager and modelfile. As new features or changes are introduced, it's crucial to ensure:
-1. No unintended behavior are introduced
-2. Core semantic rules continue to be enforced consistently
+Maintaining a language like Concerto involves frequent updates to its core features like modelmanager and modelfile. As new features or changes are introduced, it's crucial to ensure:
+1. No unintended behavior are introduced.
+2. Core semantic rules continue to be enforced consistently.
 3. Contributions from the community don't accidentally break conformance.
