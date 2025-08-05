@@ -7,7 +7,7 @@
 
 ## What it does?
 1. **Defines Semantic Rules**:
-Tests wide range of semantic validations such as:
+Tests wide range of semantic validations such as:    
     a. Property and class naming rules    
     b. Namespace conflicts    
     c. Invalid enum definitions    
