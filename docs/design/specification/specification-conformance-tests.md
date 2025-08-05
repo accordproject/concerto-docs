@@ -1,4 +1,4 @@
-# Concerto Conformance test suite
+# Concerto Conformance Test Suite
 ## About
 1. The Concerto Conformance Test Suite is a cross-language validation tool designed to test the semantic correctness of Accord Project's Concerto modeling language.   
 2. It ensures that any modifications to core components like the ModelFile, or ModelManager continue to comply with a defined set of semantic validation rules.  
