@@ -1,17 +1,18 @@
 # Concerto Conformance test suite
 ## About
-The Concerto Conformance Test Suite is a cross-language validation tool designed to test the semantic correctness of Accord Project's Concerto modeling language. It ensures that any modifications to core components like the Parser, ModelFile, or ModelManager continue to comply with a defined set of semantic validation rules.
-It currently supports JavaScript, with the ability to test across multiple implementations of Concerto such as Rust, C# and many others.
-For running conformance tests against implementations of Concerto in different languages you only need the step file in the respective language.
+1. The Concerto Conformance Test Suite is a cross-language validation tool designed to test the semantic correctness of Accord Project's Concerto modeling language.   
+2. It ensures that any modifications to core components like the Parser, ModelFile, or ModelManager continue to comply with a defined set of semantic validation rules.  
+3. It currently supports JavaScript, with the ability to test across multiple implementations of Concerto such as Rust, C# and many others.  
+4. For running conformance tests against implementations of Concerto in different languages you only need the step file in the respective language.  
 
 ## What it does?
 1. **Defines Semantic Rules**:
-    a. Tests a wide range of semantic validations such as:
-    b. Property and class naming rules
-    c. Namespace conflicts
-    d. Invalid enum definitions
-    e. Incorrect import structures
-       And more can be found here: https://github.com/accordproject/concerto-conformance/tree/main/semantic/features
+Tests wide range of semantic validations such as:
+    a. Property and class naming rules    
+    b. Namespace conflicts    
+    c. Invalid enum definitions    
+    d. Incorrect import structures    
+       And more can be found here: https://github.com/accordproject/concerto-conformance/tree/main/semantic/features    
 
 2. **Provides Valid & Invalid Models**:
 Maintains model files that are both syntactically and semantically correct or incorrect — which are used as test fixtures.
@@ -20,7 +21,7 @@ Maintains model files that are both syntactically and semantically correct or in
 Test logic is implemented using Cucumber (.feature files + step definitions) for human-readable test cases and structured validations.
 
 4. **Supports Dynamic Source Loading**:
-Uses a dynamic loader to import target implementations of Parser, ModelFile, and ModelManager via environment variables or default npm packages.
+Uses a dynamic loader to import target implementations of ModelFile, and ModelManager via environment variables or corresponding packages(ex. npm for node.js, cargo for rust).
 
 5. **CI/CD Integration Ready**:
 Can be integrated into the CI/CD pipeline of any target project to run conformance tests automatically on each commit/PR.
