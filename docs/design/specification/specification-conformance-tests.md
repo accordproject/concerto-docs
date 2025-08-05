@@ -15,7 +15,7 @@ Tests wide range of semantic validations such as:
        And more can be found here: https://github.com/accordproject/concerto-conformance/tree/main/semantic/features    
 
 2. **Provides Valid & Invalid Models**:
-Maintains model files that are both syntactically and semantically correct or incorrect — which are used as test fixtures.
+Maintains model files that are both syntactically and semantically correct or incorrect - which are used as test fixtures.
 
 3. **Runs Tests Using Cucumber**:
 Test logic is implemented using Cucumber (.feature files + step definitions) for human-readable test cases and structured validations.
