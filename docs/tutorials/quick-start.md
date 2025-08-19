@@ -44,6 +44,9 @@ Commands:
   concerto compare            compare two Concerto model files
   concerto infer              generate a concerto model from a source schema
   concerto generate <mode>    generate a sample JSON object for a concept
+  concerto decorate           apply the decorators and vocabs to the target models from given list of dcs files and vocab files
+  concerto extract-decorators extract the decorator command sets and vocabularies from a list of model files
+  concerto convert-dcs        convert decorator command set between JSON and YAML formats
 
 Options:
       --version  Show version number                                   [boolean]
