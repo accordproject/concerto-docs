@@ -285,6 +285,8 @@ specific models.
             * [.falsyOrEqual(test, value)](#module_concerto-core.DecoratorManager.falsyOrEqual) ⇒ <code>Boolean</code>
             * [.applyDecorator(decorated, type, newDecorator)](#module_concerto-core.DecoratorManager.applyDecorator)
             * [.executeCommand(namespace, declaration, command)](#module_concerto-core.DecoratorManager.executeCommand)
+            * [.jsonToYaml(jsonInput)](#module_concerto-core.DecoratorManager.jsonToYaml) ⇒ <code>string</code>
+            * [.yamlToJson(yamlInput)](#module_concerto-core.DecoratorManager.yamlToJson) ⇒ <code>object</code>
         * [.Factory](#module_concerto-core.Factory)
             * [new Factory(modelManager)](#new_module_concerto-core.Factory_new)
             * _instance_
@@ -1159,6 +1161,8 @@ Utility functions to work with
     * [.falsyOrEqual(test, value)](#module_concerto-core.DecoratorManager.falsyOrEqual) ⇒ <code>Boolean</code>
     * [.applyDecorator(decorated, type, newDecorator)](#module_concerto-core.DecoratorManager.applyDecorator)
     * [.executeCommand(namespace, declaration, command)](#module_concerto-core.DecoratorManager.executeCommand)
+    * [.jsonToYaml(jsonInput)](#module_concerto-core.DecoratorManager.jsonToYaml) ⇒ <code>string</code>
+    * [.yamlToJson(yamlInput)](#module_concerto-core.DecoratorManager.yamlToJson) ⇒ <code>object</code>
 
 <a name="module_concerto-core.DecoratorManager.decorateModels"></a>
 
@@ -1214,6 +1218,32 @@ decorators to the ClassDeclaration, or its properties, as required.
 | namespace | <code>string</code> | the namespace for the declaration |
 | declaration | <code>\*</code> | the class declaration |
 | command | <code>\*</code> | the Command object from the org.accordproject.decoratorcommands model |
+
+<a name="module_concerto-core.DecoratorManager.jsonToYaml"></a>
+
+#### DecoratorManager.jsonToYaml(jsonInput) ⇒ <code>string</code>
+Converts DCS JSON object into YAML string.
+Validates the input DCS JSON against the DCS model.
+
+**Kind**: static method of [<code>DecoratorManager</code>](#module_concerto-core.DecoratorManager)  
+**Returns**: <code>string</code> - the corresponding YAML string  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| jsonInput | <code>object</code> | the DCS JSON as parsed object |
+
+<a name="module_concerto-core.DecoratorManager.yamlToJson"></a>
+
+#### DecoratorManager.yamlToJson(yamlInput) ⇒ <code>object</code>
+Converts DCS YAML string into JSON object.
+Validates the output DCS JSON against the DCS model.
+
+**Kind**: static method of [<code>DecoratorManager</code>](#module_concerto-core.DecoratorManager)  
+**Returns**: <code>object</code> - the corresponding JSON object  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| yamlInput | <code>string</code> | the DCS YAML as string |
 
 <a name="module_concerto-core.Factory"></a>
 
