@@ -70,7 +70,7 @@ The Decorator Command Set below defines three decorator commands:
 2. Append the `@New` decorator to all properties of type `String`
 3. Upsert the `@Form("inputType", "textArea")` decorator to the `test.Person.bio` property
 
-Definition of Decorator Command Set:
+#### Definition of Decorator Command Set:
 
 ```json
 {
@@ -88,7 +88,6 @@ Definition of Decorator Command Set:
             "decorator" : {
                 "$class" : "concerto.metamodel@1.0.0.Decorator",
                 "name" : "Form",
-                "namespace" : "test@1.0.0",
                 "arguments" : [
                     {
                         "$class" : "concerto.metamodel@1.0.0.DecoratorString",
@@ -111,7 +110,6 @@ Definition of Decorator Command Set:
             "decorator" : {
                 "$class" : "concerto.metamodel@1.0.0.Decorator",
                 "name" : "New",
-                "namespace" : "test@1.0.0",
                 "arguments" : []
             }
         },
@@ -127,7 +125,6 @@ Definition of Decorator Command Set:
             "decorator" : {
                 "$class" : "concerto.metamodel@1.0.0.Decorator",
                 "name" : "Form",
-                "namespace" : "test@1.0.0",
                 "arguments" : [
                     {
                         "$class" : "concerto.metamodel@1.0.0.DecoratorString",
@@ -174,4 +171,112 @@ concept Person {
     @New
     o String ssn
 }
+```
+
+The same **[Decorator Command Set](#definition-of-decorator-command-set)** can also be expressed in the **YAML format**:
+
+```yaml
+decoratorCommandsVersion: 0.4.0
+name: web
+version: 1.0.0
+commands:
+  - action: UPSERT
+    target:
+      type: concerto.metamodel@1.0.0.StringProperty
+    decorator:
+      name: Form
+      arguments:
+        - type: String
+          value: inputType
+        - type: String
+          value: text
+  - action: APPEND
+    target:
+      type: concerto.metamodel@1.0.0.StringProperty
+    decorator:
+      name: New
+  - action: UPSERT
+    target:
+      namespace: test
+      declaration: Person
+      property: bio
+    decorator:
+      name: Form
+      arguments:
+        - type: String
+          value: inputType
+        - type: String
+          value: textArea
+```
+
+You can convert DCS between JSON and YAML formats using the **[Concerto CLI](/docs/tools/ref-concerto-cli.md#concerto-convert-dcs)**.
+
+### Quick Start: DCS Format Conversion
+
+Let's walk through a practical example of converting a Decorator Command Set from JSON to YAML format.
+
+**Step 1:** Create a sample DCS file `sample-dcs.json`:
+
+```json
+{
+  "$class": "org.accordproject.decoratorcommands@0.4.0.DecoratorCommandSet",
+  "name": "validation",
+  "version": "1.0.0",
+  "commands": [
+    {
+      "$class": "org.accordproject.decoratorcommands@0.4.0.Command",
+      "type": "UPSERT",
+      "target": {
+        "$class": "org.accordproject.decoratorcommands@0.4.0.CommandTarget",
+        "namespace": "test@1.0.0",
+        "declaration": "Person",
+        "type": "concerto.metamodel@1.0.0.StringProperty"
+      },
+      "decorator": {
+        "$class": "concerto.metamodel@1.0.0.Decorator",
+        "name": "Validate",
+        "arguments": [
+          {
+            "$class": "concerto.metamodel@1.0.0.DecoratorString",
+            "value": "required"
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+**Step 2:** Convert to YAML using the CLI:
+
+```bash
+concerto convert-dcs --dcs sample-dcs.json --output sample-dcs.yaml
+```
+
+**Step 3:** The resulting `sample-dcs.yaml` file:
+
+```yaml
+decoratorCommandsVersion: 0.4.0
+name: validation
+version: 1.0.0
+commands:
+  - action: UPSERT
+    target:
+      namespace: test@1.0.0
+      declaration: Person
+      type: concerto.metamodel@1.0.0.StringProperty
+    decorator:
+      name: Validate
+      arguments:
+        - type: String
+          value: required
+          
+```
+
+Notice how the YAML format is more concise and readable, removing the verbose `$class` properties while maintaining the same functionality.
+
+**Note:** The conversion works in both directions. You can also convert YAML back to JSON:
+
+```bash
+concerto convert-dcs --dcs sample-dcs.yaml
 ```
