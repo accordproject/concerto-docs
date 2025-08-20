@@ -26,6 +26,9 @@ Commands:
   concerto compare            compare two Concerto model files
   concerto infer              generate a concerto model from a source schema
   concerto generate <mode>    generate a sample JSON object for a concept
+  concerto decorate           apply the decorators and vocabs to the target models from given list of dcs files and vocab files
+  concerto extract-decorators extract the decorator command sets and vocabularies from a list of model files
+  concerto convert-dcs        convert decorator command set between JSON and YAML formats
 
 Options:
       --version  Show version number                                   [boolean]
@@ -323,4 +326,44 @@ Options:
       --output                 The output directory path where you want your
                                generated models to be stored
                                                         [string] [default :output]
+```
+
+## concerto convert-dcs
+`concerto convert-dcs` allows you to convert Decorator Command Set files between JSON and YAML formats.
+
+```md
+concerto convert-dcs
+
+convert decorator command set between JSON and YAML formats
+
+Options:
+      --version  Show version number                                   [boolean]
+  -v, --verbose                                                 [default: false]
+      --help     Show help                                             [boolean]
+      --dcs      The input DCS file (.json or .yaml/.yml)    [string] [required]
+      --output   The output file path (.json or .yaml/.yml). If not provided,
+                 outputs to console                                     [string]
+```
+
+The command automatically detects the input format based on the file extension and converts to the opposite format:
+- `.json` files are converted to YAML format
+- `.yaml` or `.yml` files are converted to JSON format
+
+### Example
+Convert a JSON decorator command set to YAML:
+
+```
+concerto convert-dcs --dcs dcs.json --output dcs.yml
+```
+
+Convert a YAML decorator command set to JSON:
+
+```
+concerto convert-dcs --dcs dcs.yaml --output dcs.json
+```
+
+If no output file is specified, the converted content will be written to console:
+
+```
+concerto convert-dcs --dcs dcs.json
 ```
