@@ -32,7 +32,9 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.4.1",
     "@types/node": "20.11.24",
-    "jsdoc-to-markdown": "8.0.0"
+    "jsdoc-to-markdown": "8.0.0",
+    "lockfile-lint": "4.14.1",
+    "syncpack": "14.0.0-alpha.32"
   },
   "browserslist": {
     "production": [
