@@ -31,6 +31,10 @@ specific models.</p>
 <dd><p>Concerto vocabulary module. Concerto is a framework for defining domain
 specific models.</p>
 </dd>
+<dt><a href="#module_concerto-linter">concerto-linter</a></dt>
+<dd><p>Concerto linter module. Concerto is a framework for defining domain
+specific models.</p>
+</dd>
 </dl>
 
 ## Classes
@@ -3904,6 +3908,39 @@ vocabulary is found, null is returned
 | [options.localeMatcher] | <code>\*</code> | Pass 'lookup' to find a general vocabulary, if available |
 
 <a name="AbstractPlugin"></a>
+
+<a name="module_concerto-linter"></a>
+
+## concerto-linter
+Concerto linter module. Concerto is a framework for defining domain
+specific models.
+
+
+<a name="module_concerto-linter.lintModel"></a>
+
+### concerto-linter.lintModel(model, [config]) ⇒ <code>Promise.&lt;Array.&lt;lintResult&gt;&gt;</code>
+Lints Concerto models using Spectral and Concerto rules.
+
+**Kind**: static method of [<code>concerto-linter</code>](#module_concerto-linter)  
+**Returns**: <code>Promise.&lt;Array.&lt;lintResult&gt;&gt;</code> - A promise that resolves to an array of linting results.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| model | <code>string</code> \| <code>object</code> | The Concerto model to lint, either as a CTO string or a parsed AST object. Note: No external dependency resolution is performed. |
+| [config] | <code>object</code> | Configuration options for customizing the linting process. |
+| [config.ruleset] | <code>string</code> | Path to a custom Spectral ruleset file or 'default' to use the built-in ruleset. |
+| [config.excludeNamespaces] | <code>string</code> \| <code>Array.&lt;string&gt;</code> | One or more namespaces to exclude from linting results (defaults to 'concerto.*' and 'org.accord.*'). |
+
+
+**Result**: The returned `lintResult` objects have the following properties:
+
+| Name | Type | Description |
+| --- | --- | --- |
+| code | <code>string</code> | Unique rule identifier (e.g. 'no-reserved-keywords') |
+| message | <code>string</code> | Human-readable description of the violation |
+| severity | <code>string</code> | Severity level ('error' \| 'warning' \| 'info' \| 'hint') |
+| path | <code>Array.&lt;string&nbsp;\|&nbsp;number&gt;</code> | JSONPath-style pointer as an array of keys/indices (e.g. ['declarations', 3]) |
+| namespace | <code>string</code> | Namespace where the violation occurred |
 
 ## AbstractPlugin
 Simple plug-in class for code-generation. This lists functions that can be passed to extend the default code-generation behavior.

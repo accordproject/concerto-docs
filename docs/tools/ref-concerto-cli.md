@@ -29,6 +29,7 @@ Commands:
   concerto decorate           apply the decorators and vocabs to the target models from given list of dcs files and vocab files
   concerto extract-decorators extract the decorator command sets and vocabularies from a list of model files
   concerto convert-dcs        convert decorator command set between JSON and YAML formats
+  concerto lint               lint concerto model file
 
 Options:
       --version  Show version number                                   [boolean]
@@ -366,4 +367,49 @@ If no output file is specified, the converted content will be written to console
 
 ```
 concerto convert-dcs --dcs dcs.json
+```
+
+## concerto lint
+`concerto lint` enables linting concerto models directly from the terminal. It helps developers validate models against default or custom rulesets.
+
+```md
+concerto lint
+
+lint concerto model file
+
+Options:
+      --version  Show version number                                   [boolean]
+  -v, --verbose                                                 [default: false]
+      --help     Show help                                             [boolean]
+      --model    Path to concerto model (CTO) files to lint. [array] [required]
+      --exclude  One or more namespaces to exclude from lint results. Defaults
+                 include `concerto.*` and `org.accordproject.*`.         [array]
+      -j         Output results in JSON format.                        [boolean]
+      --ruleset  Path to a custom Spectral ruleset file, or `'default'` to
+                 force the built-in ruleset.                            [string]
+```
+
+### Example
+Lint a model with default (text) output:
+
+```md
+concerto lint --model model.cto
+```
+
+Lint a model with JSON output:
+
+```md
+concerto lint --model model.cto -j
+```
+
+Lint a model excluding a specific namespace:
+
+```md
+concerto lint --model model.cto --exclude org.example
+```
+
+Lint a model using a custom ruleset:
+
+```md
+concerto lint --model model.cto --ruleset ./custom-ruleset.yaml
 ```
