@@ -4,78 +4,41 @@ title: Metamodel JSON
 sidebar_position: 8
 ---
 
-Concerto models may be fully represented via the metamodel JSON format.
+import ConcertoConverter from '@site/src/components/ConcertoConverter';
 
-Given the following `test.cto` file:
+## What is a Metamodel?
 
-```js
-namespace test@1.0.0
+A **metamodel** is the actual runtime object representation of your Concerto model. When you parse a CTO file, Concerto creates a metamodel object that captures the complete structure—namespaces, declarations, properties, and relationships.
 
-concept Person identified by email {
-  o String email
-  o DateTime dob optional
-}
-```
+This metamodel object can be represented in two formats:
+- **CTO format**: The human-readable text format you write (e.g., `concept Person { o String name }`)
+- **JSON format**: A structured JSON representation of the same model object
 
-It can be converted to metamodel JSON format via the command:
+Both formats represent the same underlying model object. The JSON format is particularly useful when working with Concerto APIs programmatically, while CTO is easier for humans to read and write.
 
-> Note: the `excludeLineLocations` argument removes the text stream positional information from the output JSON
+## Interactive Explorer
 
+Explore how the same model object is represented in both CTO and JSON formats:
+
+<ConcertoConverter />
+
+## Converting with the CLI
+
+Convert between CTO and JSON representations using the Concerto CLI:
+
+**Parse CTO to JSON:**
 ```bash
-concerto parse --model test.cto --excludeLineLocations
+concerto parse --model mymodel.cto --excludeLineLocations
 ```
 
-Giving the output:
-
-```json
-{
-    "$class": "concerto.metamodel@1.0.0.Model",
-    "decorators": [],
-    "namespace": "test@1.0.0",
-    "imports": [],
-    "declarations": [
-        {
-            "$class": "concerto.metamodel@1.0.0.ConceptDeclaration",
-            "name": "Person",
-            "isAbstract": false,
-            "properties": [
-                {
-                    "$class": "concerto.metamodel@1.0.0.StringProperty",
-                    "name": "email",
-                    "isArray": false,
-                    "isOptional": false
-                },
-                {
-                    "$class": "concerto.metamodel@1.0.0.DateTimeProperty",
-                    "name": "dob",
-                    "isArray": false,
-                    "isOptional": true
-                }
-            ],
-            "identified": {
-                "$class": "concerto.metamodel@1.0.0.IdentifiedBy",
-                "name": "email"
-            }
-        }
-    ]
-}
-```
-A metamodel JSON document can be converted back to CTO format using the CLI command:
-
+**Convert JSON to CTO:**
 ```bash
-concerto print --input ./docs/test.json
+concerto print --input mymodel.json
 ```
 
-Which will echo the CTO to the console:
+The `$class` property identifies each object's type. Properties include `isArray` and `isOptional` flags that correspond to the CTO syntax.
 
-```js
-namespace test@1.0.0
+## Reference
 
-concept Person identified by email {
-  o String email
-  o DateTime dob optional
-}
-```
-
-The full reference to the Concerto metamodel is available [online](https://github.com/accordproject/concerto-metamodel/blob/main/lib/metamodel.cto).
+For a complete definition of all metamodel classes and properties, see the [Concerto metamodel reference](https://github.com/accordproject/concerto-metamodel/blob/main/lib/metamodel.cto).
 

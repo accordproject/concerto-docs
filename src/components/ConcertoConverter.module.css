@@ -1,0 +1,410 @@
+.converterContainer {
+  margin: 2rem 0;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background: var(--ifm-color-background-secondary);
+  overflow: hidden;
+}
+
+.tabContainer {
+  display: flex;
+  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-color-emphasis-100);
+}
+
+.tabButton {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-700);
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+}
+
+.tabButton:hover {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-900);
+}
+
+.tabButton.active {
+  color: var(--ifm-color-primary);
+  border-bottom-color: var(--ifm-color-primary);
+  background: var(--ifm-color-background-secondary);
+}
+
+.overviewSection {
+  padding: 2rem;
+}
+
+.overviewSection h3 {
+  margin-top: 0;
+  color: var(--ifm-color-primary);
+}
+
+.overviewSection h4 {
+  margin-top: 1.5rem;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.overviewSection ol,
+.overviewSection ul {
+  line-height: 1.8;
+  margin: 1rem 0;
+}
+
+.overviewSection li {
+  margin: 0.5rem 0;
+}
+
+.codeBlock {
+  background: var(--ifm-code-background);
+  color: var(--ifm-code-color);
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 1rem 0;
+}
+
+.explorerSection {
+  padding: 2rem;
+}
+
+.explorerSection h3 {
+  margin-top: 0;
+  color: var(--ifm-color-primary);
+}
+
+.explorerSection h4 {
+  color: var(--ifm-color-emphasis-900);
+}
+
+.explorerSection p {
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.6;
+}
+
+.converterControls {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.resetButton,
+.formatButton {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.resetButton {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-900);
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.resetButton:hover {
+  background: var(--ifm-color-emphasis-300);
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+.formatButton {
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
+
+.formatButton:hover {
+  background: var(--ifm-color-primary-dark);
+  color: #fff;
+}
+
+.editorContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+  align-items: stretch;
+}
+
+.editorPanel {
+  display: flex;
+  flex-direction: column;
+  background: var(--ifm-color-background-secondary);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.editorPanel h4 {
+  margin: 0;
+  padding: 1rem;
+  background: var(--ifm-color-emphasis-100);
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-emphasis-900);
+  font-size: 0.95rem;
+}
+
+/* Syntax highlighting container */
+.highlightWrapper {
+  position: relative;
+  flex: 1;
+  min-height: 400px;
+}
+
+.highlightInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  margin: 0;
+  border: none;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  resize: none;
+  background: transparent;
+  color: transparent;
+  caret-color: var(--ifm-font-color-base);
+  z-index: 2;
+  overflow: auto;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+.highlightInput::selection {
+  background: rgba(100, 150, 255, 0.3);
+}
+
+.highlightDisplay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 1rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  background: var(--ifm-code-background);
+  color: var(--ifm-font-color-base);
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+.highlightWrapper:focus-within {
+  box-shadow: inset 0 0 0 2px var(--ifm-color-primary);
+}
+
+/* Matching colors based on CTO-JSON correspondence */
+.highlightDisplay :global(.syntax-namespace) {
+  color: #c678dd;
+  font-weight: 600;
+}
+
+.highlightDisplay :global(.syntax-concept-name) {
+  color: #e5c07b;
+  font-weight: 600;
+}
+
+.highlightDisplay :global(.syntax-type) {
+  color: #61afef;
+  font-weight: 500;
+}
+
+.highlightDisplay :global(.syntax-prop-name) {
+  color: #98c379;
+}
+
+.highlightDisplay :global(.syntax-modifier) {
+  color: #56b6c2;
+}
+
+.highlightDisplay :global(.syntax-keyword) {
+  color: #c678dd;
+}
+
+.highlightDisplay :global(.syntax-meta) {
+  color: #abb2bf;
+}
+
+.highlightDisplay :global(.syntax-bool) {
+  color: #d19a66;
+}
+
+.highlightDisplay :global(.syntax-custom-type) {
+  color: #e5c07b;
+}
+
+.highlightDisplay :global(.syntax-placeholder) {
+  color: var(--ifm-color-emphasis-600);
+  font-style: italic;
+}
+
+.textarea {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  resize: none;
+  background: var(--ifm-code-background);
+  color: var(--ifm-code-color);
+  min-height: 400px;
+}
+
+.textarea:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--ifm-color-primary);
+}
+
+.convertButton {
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 1rem;
+  border: none;
+  background: var(--ifm-color-emphasis-300);
+  color: var(--ifm-font-color-base);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.convertButton:hover {
+  background: var(--ifm-color-emphasis-400);
+}
+
+.error {
+  background: var(--ifm-alert-background-color-danger, #fde7e7);
+  border: 1px solid var(--ifm-alert-border-color-danger, #f5aeae);
+  color: var(--ifm-alert-foreground-color-danger, #a61e4d);
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.message {
+  background: var(--ifm-alert-background-color-info, #f0f7ff);
+  border: 1px solid var(--ifm-alert-border-color-info, #b5d8f7);
+  color: var(--ifm-alert-foreground-color-info, #003eb3);
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1024px) {
+  .editorContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .textarea {
+    min-height: 300px;
+  }
+}
+
+.examplesSection {
+  margin-top: 3rem;
+  border-top: 2px solid var(--ifm-color-emphasis-200);
+  padding-top: 2rem;
+}
+
+.examplesSection h4 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.exampleCard {
+  background: var(--ifm-color-background-secondary);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.exampleCard h5 {
+  margin: 0;
+  padding: 1rem;
+  background: var(--ifm-color-emphasis-100);
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-emphasis-900);
+  cursor: pointer;
+  user-select: none;
+}
+
+.exampleCard details {
+  padding: 0;
+}
+
+.exampleCard summary {
+  margin: 0;
+  padding: 1rem;
+  background: var(--ifm-color-emphasis-100);
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--ifm-color-primary);
+  outline: none;
+}
+
+.exampleCard summary:hover {
+  background: var(--ifm-color-emphasis-200);
+}
+
+.exampleContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--ifm-color-background-secondary);
+}
+
+.exampleHalf {
+  padding: 1rem;
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 4px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.exampleHalf strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.exampleHalf pre {
+  margin: 0;
+  padding: 1rem;
+  background: var(--ifm-code-background);
+  color: var(--ifm-code-color);
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  .exampleContent {
+    grid-template-columns: 1fr;
+  }
+}
