@@ -23,9 +23,9 @@ Further, semver defines MAJOR.MINOR.PATCH as follows
 - MINOR version when you add functionality in a backwards compatible manner, and
 - PATCH version when you make backwards compatible bug fixes.
 
-# Compatability
+# Compatibility
 
-When you make changes to a model some of those changes may be classes as **breaking changes**.
+When you make changes to a model some of those changes may be classified as **breaking changes**.
 
 > Note that this is about backwards compatibility only, and says nothing about forwards compatibility.
 
@@ -33,7 +33,7 @@ When you make changes to a model some of those changes may be classes as **break
 
 A model A is strictly compatible with a model B if all valid instances of the types defined by A are also valid instances of the types defined by model B.
 
-![compatible changes](/img/compatability.png)
+![compatible changes](/img/compatibility.png)
 
 Examples of non-breaking changes:
 - Adding a new type to model B
@@ -44,11 +44,11 @@ Examples of non-breaking changes:
 ## Breaking Changes
 
 Examples of breaking changes:
-- Changing the type of an property
-- Changing the name of an property (or deleting an property)
+- Changing the type of a property
+- Changing the name of a property (or deleting a property)
 - Removing a declaration
-- Changing the name of an declaration
-- Changing a constraint on an property
+- Changing the name of a declaration
+- Changing a constraint on a property
 - Removing values from an enumeration
 - Making a breaking change to a parent declaration
 - Adding a new required property
@@ -57,8 +57,8 @@ Use the `concerto compare` [command line utility](/docs/tools/ref-concerto-cli.m
 
 # Considerations for Persistence
 
-Practically speaking, once millions of instances of the types defined in model have been created then a strict governance process for model changes must be put in place.
+Practically speaking, once millions of instances of the types defined in a model have been created then a strict governance process for model changes must be put in place.
 
 If end-users are making model changes they should either be prevented from making breaking changes, or warned that a change is breaking and that data will need to be migrated, or that broken instances will be deleted.
 
-When storing instances track which version of a model was used to create the instance, and we use that model+version to verify instances.
+When storing instances, track which version of a model was used to create the instance, and we use that model+version to verify instances.

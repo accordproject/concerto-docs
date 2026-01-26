@@ -53,7 +53,7 @@ concept Product identified by sku {
 }
 
 concept Order identified {
-   o Double ammount
+   o Double amount
    o Address address
    --> Product product
 }
