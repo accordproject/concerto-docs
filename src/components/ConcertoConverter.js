@@ -19,6 +19,10 @@ const highlightCTO = (code) => {
     // Concept/Asset/etc names - yellow (matches "name" value in ConceptDeclaration)
     .replace(/\b(concept|asset|participant|transaction|event|enum)\s+(\w+)/g, 
       (match, keyword, name) => `<span class="syntax-keyword">${keyword}</span> <span class="syntax-concept-name">${name}</span>`)
+    // Enum values - keep each value highlighted without disturbing newlines
+    .replace(/^(\s*)o\s+(\w+)\s*$/gm, (match, indent, value) => {
+      return `${indent}o <span class="syntax-enum-value">${value}</span>`;
+    })
     // Types - blue (matches StringProperty, DateTimeProperty in JSON)
     .replace(/\b(String|Integer|Double|Long|DateTime|Boolean)\b/g, '<span class="syntax-type">$1</span>')
     // Property names - green (matches "name" in property objects)
@@ -498,9 +502,18 @@ enum Status {
       "$class": "concerto.metamodel@1.0.0.EnumDeclaration",
       "name": "Status",
       "properties": [
-        {"name": "PENDING"},
-        {"name": "SHIPPED"},
-        {"name": "DELIVERED"}
+        {
+          "$class": "concerto.metamodel@1.0.0.EnumValueDeclaration",
+          "name": "PENDING"
+        },
+        {
+          "$class": "concerto.metamodel@1.0.0.EnumValueDeclaration",
+          "name": "SHIPPED"
+        },
+        {
+          "$class": "concerto.metamodel@1.0.0.EnumValueDeclaration",
+          "name": "DELIVERED"
+        }
       ]
     }
   ]

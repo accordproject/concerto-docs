@@ -161,6 +161,10 @@
   position: relative;
   flex: 1;
   min-height: 400px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  background: var(--ifm-code-background);
 }
 
 .highlightInput {
@@ -172,9 +176,11 @@
   padding: 1rem;
   margin: 0;
   border: none;
-  font-family: 'Courier New', monospace;
-  font-size: 0.8rem;
-  line-height: 1.6;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  tab-size: 2;
   resize: none;
   background: transparent;
   color: transparent;
@@ -183,6 +189,7 @@
   overflow: auto;
   white-space: pre;
   word-wrap: normal;
+  overflow-wrap: normal;
 }
 
 .highlightInput::selection {
@@ -197,16 +204,25 @@
   height: 100%;
   margin: 0;
   padding: 1rem;
-  font-family: 'Courier New', monospace;
-  font-size: 0.8rem;
-  line-height: 1.6;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  tab-size: 2;
   background: var(--ifm-code-background);
   color: var(--ifm-font-color-base);
-  overflow: hidden;
+  overflow: auto;
   pointer-events: none;
+  user-select: none;
   z-index: 1;
   white-space: pre;
   word-wrap: normal;
+  overflow-wrap: normal;
+  scrollbar-width: none;
+}
+
+.highlightDisplay::-webkit-scrollbar {
+  display: none;
 }
 
 .highlightWrapper:focus-within {
@@ -251,6 +267,11 @@
 
 .highlightDisplay :global(.syntax-custom-type) {
   color: #e5c07b;
+}
+
+.highlightDisplay :global(.syntax-enum-value) {
+  color: #d19a66;
+  font-weight: 500;
 }
 
 .highlightDisplay :global(.syntax-placeholder) {
