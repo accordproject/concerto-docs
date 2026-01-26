@@ -34,7 +34,7 @@ None.
 
 1. `$identifier` and `$timestamp` cannot be used as a property names, so these are converted to `_identifier` and `_timestamp`.
 2. DateTime is stored as a `long` with the `@logicalType("timestamp-micros")` annotation
-3. No super types, so properties across the inheritence hierarchy are merged into each record
+3. No super types, so properties across the inheritance hierarchy are merged into each record
 4. Relationships are represented as `string`
 5. Scalars are unboxed as properties
 
