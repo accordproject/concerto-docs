@@ -4,7 +4,7 @@ title: Imports
 sidebar_position: 2
 ---
 
-In order for one namespace to reference types defined in another namespace, the types must be imported from a versioned namespace. Via imports you can decompose your modles into discrete files (and namespaces), version them and build a graph of dependencies between your models.
+In order for one namespace to reference types defined in another namespace, the types must be imported from a versioned namespace. Via imports you can decompose your models into discrete files (and namespaces), version them and build a graph of dependencies between your models.
 
 ## Single Import
 
@@ -54,7 +54,7 @@ concept Person{
 
 ## Strict:false mode
 
-For backwards compatability, and when running with `strict:false` imports may import types from unversioned namespaces, or may import all types in a namespace. 
+For backwards compatibility, and when running with `strict:false` imports may import types from unversioned namespaces, or may import all types in a namespace. 
 
 > Please migrate models to use versioned namespaces and imports as this capability will be deprecated and removed in a future major release.
 
