@@ -12,7 +12,7 @@ Concerto is a **platform independent** modelling language. The Concerto metamode
 
 ## Extending the Metamodel
 
-Extensions to the Concerto metamodel _do occur_, but they are infrequent and are carefully considered, due to the extensive work involved in extending the complete Concerto stack to support new metamodel constructs. Backwards compatability is a major consideration.
+Extensions to the Concerto metamodel _do occur_, but they are infrequent and are carefully considered, due to the extensive work involved in extending the complete Concerto stack to support new metamodel constructs. Backwards compatibility is a major consideration.
 
 Before undertaking an extension of the Concerto metamodel upstream impact must be considered. [Upstream tools that use Concerto](../tools/other-tools) (both Open Source and commercial) should be consulted. Early and clear communication via the Accord Project Technology Working Group is vital for success.
 
