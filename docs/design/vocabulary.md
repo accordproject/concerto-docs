@@ -100,7 +100,7 @@ Declaration level: "properties", declaration’s own name (e.g., Vehicle, Color)
 Property level: property's own name (e.g., vin, weight)
 ```
 
-## Creating a boostrap Vocabulary file
+## Creating a bootstrap Vocabulary file
 
 Use the following command to generate a bootstrap Vocabulary file in English Language. This file will give a boilerplate format for the Vocabulary YAML file. This file can be edited to any description that is required or any language that is required.
 
