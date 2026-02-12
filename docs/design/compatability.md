@@ -23,7 +23,7 @@ Further, semver defines MAJOR.MINOR.PATCH as follows
 - MINOR version when you add functionality in a backwards compatible manner, and
 - PATCH version when you make backwards compatible bug fixes.
 
-# Compatability
+# Compatibility
 
 When you make changes to a model some of those changes may be classes as **breaking changes**.
 
