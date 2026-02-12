@@ -33,7 +33,7 @@ When you make changes to a model some of those changes may be classes as **break
 
 A model A is strictly compatible with a model B if all valid instances of the types defined by A are also valid instances of the types defined by model B.
 
-![compatible changes](/img/compatability.png)
+![compatible changes](/img/compatibility.png)
 
 Examples of non-breaking changes:
 - Adding a new type to model B
