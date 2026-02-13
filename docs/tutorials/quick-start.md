@@ -47,6 +47,7 @@ Commands:
   concerto decorate           apply the decorators and vocabs to the target models from given list of dcs files and vocab files
   concerto extract-decorators extract the decorator command sets and vocabularies from a list of model files
   concerto convert-dcs        convert decorator command set between JSON and YAML formats
+  concerto lint               lint concerto model file
 
 Options:
       --version  Show version number                                   [boolean]
