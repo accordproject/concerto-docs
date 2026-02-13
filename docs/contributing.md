@@ -4,7 +4,7 @@ title: Contributing
 sidebar_position: 10
 ---
 
-We love Open Source contributions; whether they be [fixes to this documentation](https://github.com/accordproject/concerto-docs), or [Concerto bug reports, feature requests, or code contrbutions](https://github.com/accordproject/concerto).
+We love Open Source contributions; whether they be [fixes to this documentation](https://github.com/accordproject/concerto-docs), or [Concerto bug reports, feature requests, or code contributions](https://github.com/accordproject/concerto).
 
 Financial contributions are also very welcome and can be made to Accord Project, via the [Linux Foundation Crowdfunding portal](https://crowdfunding.lfx.linuxfoundation.org/projects/accordproject).
 

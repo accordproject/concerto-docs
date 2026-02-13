@@ -81,7 +81,7 @@ To configure the ModelManager with decorator validation:
   });
 ```
 
-The `missingDecorator` option is used to control the validation behavior if an undeclared decorator is used on a model element. While the `invalidDecorator` option controls the validation of decorator aguments. Using these two options the ModelManager can be configured to log warning messages for missing decorators, while producing errors for invalid usage of declared decorators, or other scenarios.
+The `missingDecorator` option is used to control the validation behavior if an undeclared decorator is used on a model element. While the `invalidDecorator` option controls the validation of decorator arguments. Using these two options the ModelManager can be configured to log warning messages for missing decorators, while producing errors for invalid usage of declared decorators, or other scenarios.
 
 Both the  `missingDecorator` and `invalidDecorator` options can be `undefined` (to switch off validation) or may be one of the defined log levels: `error, warn, info` etc. If the log level is set to `error` then a log message will be output and an exception is thrown, ensuring that only valid decorators may be used in the model.
 
