@@ -584,4 +584,21 @@
 }
 .footer__link-item:hover .footer-icon {
   opacity: 1;
+
+  /* =========================================
+   DocSearch Dark Theme Hover Fix
+========================================= */
+
+[data-theme='dark'] .DocSearch-Hit[aria-selected='true'],
+[data-theme='dark'] .DocSearch-Hit:hover {
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
+[data-theme='dark'] .DocSearch-Hit[aria-selected='true'] *,
+[data-theme='dark'] .DocSearch-Hit:hover * {
+  color: #ffffff !important;
+}
+
+
 }
