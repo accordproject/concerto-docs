@@ -1,70 +1,133 @@
----
-id: codegen-vocabulary
-title: Vocabulary
----
-
-The Vocabulary file for Concerto has human-readable labels (Terms) to be associated with model elements. Terms are stored within a locale specific vocabulary YAML file associated with a Concerto namespace.
-
-```base
-concerto compile --model test.cto --target vocabulary
-```
-
-## Sample Output
-
-```
-#Generated vocabulary for namespace: test@1.0.0
+# Generated vocabulary for namespace: test@1.0.0
 locale: en
 namespace: test@1.0.0
+
 declarations:
-  - OrderLine: Order Line
-    properties:
-      - orderLineId: Order Line Id of the Order Line
-      - sku: Sku of the Order Line
-  - Order: Order
-    properties:
-      - orderId: Order Id of the Order
-      - orderlines: Orderlines of the Order
-  - Address: Address
-    properties:
-      - street: Street of the Address
-      - city: City of the Address
-      - zip: Zip of the Address
-  - SSN: SSN
-  - Person: Person
-    properties:
-      - ssn: Ssn of the Person
-      - givenName: Given Name of the Person
-  - LoyaltyStatus: Loyalty Status
-    properties:
-      - level: Level of the Loyalty Status
-  - Color: Color
-    properties:
-      - RED: RED of the Color
-      - GREEN: GREEN of the Color
-      - BLUE: BLUE of the Color
-      - PINK: PINK of the Color
-      - BLACK: BLACK of the Color
-      - WHITE: WHITE of the Color
-  - Preferences: Preferences
-    properties:
-      - favoriteColors: Favorite Colors of the Preferences
-  - TemplateData: Template Data
-    properties:
-      - firstName: First Name of the Template Data
-      - lastName: Last Name of the Template Data
-      - middleNames: Middle Names of the Template Data
-      - active: Active of the Template Data
-      - lastVisit: Last Visit of the Template Data
-      - address: Address of the Template Data
-      - orders: Orders of the Template Data
-      - loyaltyStatus: Loyalty Status of the Template Data
-      - preferences: Preferences of the Template Data
-```
+  - OrderLine:
+      terms:
+        - Order Line
+        - Line Item
+      properties:
+        - orderLineId:
+            terms:
+              - Order Line Id of the Order Line
+              - Line Identifier
+        - sku:
+            terms:
+              - SKU of the Order Line
+              - Product Code
 
-## Options
+  - Order:
+      terms:
+        - Order
+        - Purchase Order
+      properties:
+        - orderId:
+            terms:
+              - Order Id of the Order
+              - Order Number
+        - orderlines:
+            terms:
+              - Orderlines of the Order
+              - Line Items
 
-None.
+  - Address:
+      terms:
+        - Address
+      properties:
+        - street:
+            terms:
+              - Street of the Address
+        - city:
+            terms:
+              - City of the Address
+        - zip:
+            terms:
+              - Zip of the Address
 
-## Limitations
+  - SSN:
+      terms:
+        - SSN
+        - Social Security Number
 
-1. Scalars are unboxed as properties
+  - Person:
+      terms:
+        - Person
+      properties:
+        - ssn:
+            terms:
+              - SSN of the Person
+        - givenName:
+            terms:
+              - Given Name of the Person
+
+  - LoyaltyStatus:
+      terms:
+        - Loyalty Status
+      properties:
+        - level:
+            terms:
+              - Level of the Loyalty Status
+
+  - Color:
+      terms:
+        - Color
+      properties:
+        - RED:
+            terms:
+              - RED of the Color
+        - GREEN:
+            terms:
+              - GREEN of the Color
+        - BLUE:
+            terms:
+              - BLUE of the Color
+        - PINK:
+            terms:
+              - PINK of the Color
+        - BLACK:
+            terms:
+              - BLACK of the Color
+        - WHITE:
+            terms:
+              - WHITE of the Color
+
+  - Preferences:
+      terms:
+        - Preferences
+      properties:
+        - favoriteColors:
+            terms:
+              - Favorite Colors of the Preferences
+
+  - TemplateData:
+      terms:
+        - Template Data
+      properties:
+        - firstName:
+            terms:
+              - First Name of the Template Data
+        - lastName:
+            terms:
+              - Last Name of the Template Data
+        - middleNames:
+            terms:
+              - Middle Names of the Template Data
+        - active:
+            terms:
+              - Active of the Template Data
+        - lastVisit:
+            terms:
+              - Last Visit of the Template Data
+        - address:
+            terms:
+              - Address of the Template Data
+        - orders:
+            terms:
+              - Orders of the Template Data
+        - loyaltyStatus:
+            terms:
+              - Loyalty Status of the Template Data
+        - preferences:
+            terms:
+              - Preferences of the Template Data
