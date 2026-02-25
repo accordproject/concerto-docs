@@ -1,4 +1,4 @@
-# Cicero Development Guide
+# Cicero Development
 
 ## ❗ Accord Project Development Guide ❗
 We'd love for you to help develop improvements to Cicero technology! Please refer to the [Accord Project Development guidelines][apdev] we'd like you to follow.
@@ -9,7 +9,7 @@ To build the documentation locally:
 ```
 cd ./website
 npm install
-npm run start
+npm run start   
 ```
 If you want to re-generate the JSDoc API:
 ```
