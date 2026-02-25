@@ -1,43 +1,76 @@
 ---
-name: Bug Report
-about: Create a report to help us improve
-title: ''
-labels: ''
+name: 🐛 Bug Report
+about: Report a reproducible bug to help us improve
+title: "[BUG] Short description of the issue"
+labels: bug
 assignees: ''
+---
+
+# 🐛 Bug Report
+
+## 📌 Summary
+<!-- Provide a clear and concise description of the issue -->
 
 ---
 
-<!--- Provide a general summary of the issue in the Title above -->
-# Bug Report 🐛
-<!--- Provide an expanded summary of the issue -->
+## ✅ Expected Behavior
+<!-- What should happen? -->
 
-## Expected Behavior
-<!--- Tell us what should happen -->
+---
 
-## Current Behavior
-<!--- Tell us what happens instead of the expected behavior -->
+## ❌ Current Behavior
+<!-- What actually happens? Include error messages if any -->
 
-## Possible Solution
-<!--- Not obligatory, but suggest a fix/reason for the bug, -->
+---
 
-## Steps to Reproduce
-<!--- Provide a link to a live example, or an unambiguous set of steps to -->
-<!--- reproduce this bug. Include code to reproduce, if relevant -->
-1.
-2.
-3.
-4.
+## 🔁 Steps to Reproduce
+<!-- Provide clear steps to reproduce the issue -->
 
-## Context (Environment)
-<!--- How has this issue affected you? What are you trying to accomplish? -->
-<!--- Providing context helps us come up with a solution that is most useful in the real world -->
-### Desktop
- - OS: [e.g. macOS]
- - Browser: [e.g. Chrome, Safari]
- - Version: [e.g. 0.22.15]
+1. Go to '...'
+2. Click on '...'
+3. Scroll to '...'
+4. Observe the error
 
-## Detailed Description
-<!--- Provide a detailed description of the change or addition you are proposing -->
+---
 
-## Possible Implementation
-<!--- Not obligatory, but suggest an idea for implementing addition or change -->
+## 📷 Screenshots / Logs
+<!-- Attach screenshots, console logs, stack traces, or recordings -->
+
+---
+
+## 🌍 Environment
+
+### 💻 Desktop
+- OS: (e.g., Windows 11, macOS 14)
+- Browser: (e.g., Chrome 121, Firefox 122)
+- App Version: (e.g., v1.2.0)
+
+### 📱 Mobile (if applicable)
+- Device:
+- OS:
+- Browser:
+- App Version:
+
+---
+
+## 📊 Impact
+<!-- How serious is the issue? -->
+- [ ] Critical (Blocking functionality)
+- [ ] Major (Core feature broken)
+- [ ] Minor (Non-blocking bug)
+- [ ] Cosmetic (UI issue)
+
+---
+
+## 🧠 Possible Cause (Optional)
+<!-- If you have insights about why this might be happening -->
+
+---
+
+## 💡 Suggested Fix (Optional)
+<!-- Suggest a potential fix or approach -->
+
+---
+
+## 📝 Additional Context
+<!-- Any additional information that may help -->
