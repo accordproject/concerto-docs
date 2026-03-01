@@ -100,7 +100,7 @@ Declaration level: "properties", declaration’s own name (e.g., Vehicle, Color)
 Property level: property's own name (e.g., vin, weight)
 ```
 
-## Creating a boostrap Vocabulary file
+## Creating a bootstrap Vocabulary file
 
 Use the following command to generate a bootstrap Vocabulary file in English Language. This file will give a boilerplate format for the Vocabulary YAML file. This file can be edited to any description that is required or any language that is required.
 
@@ -112,7 +112,7 @@ Please refer to [Vocabulary Code Generation](/docs/reference/codegen/vocabulary.
 
 ## API Usage
 
-Use the `VocabularyManager` classs to define new vocabularies, retrieve terms for a locale, or to validate
+Use the `VocabularyManager` class to define new vocabularies, retrieve terms for a locale, or to validate
 a vocabulary using a `ModelManager`.
 
 ### Adding a Vocabulary
@@ -157,7 +157,7 @@ const term = vocabularyManager.resolveTerm(modelManager, 'org.acme', 'en-gb', 'T
 
 ### Validating a Vocabulary Manager
 
-Use the `validate` method on the `VocabularyManager` to detect missing and redudant vocabulary 
+Use the `validate` method on the `VocabularyManager` to detect missing and redundant vocabulary 
 terms — comparing the terms in the `VocabularyManager` with the declarations in a `ModelManager`.
 The return value from `validate` is an object containing information for the missing and additional terms. 
 

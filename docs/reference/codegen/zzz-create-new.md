@@ -147,7 +147,7 @@ visitModelManager(modelManager, parameters) {
     }
 ```
 
-### Outputing Code 
+### Outputting Code 
 
 The `parameters` object contains a `fileWriter` object, an instance of `FileWriter` from `@accordproject/concerto-util`, used to write lines of generated code. Refer to [the class for details](https://github.com/accordproject/concerto/blob/main/packages/concerto-util/lib/filewriter.js). Note that there is also an [InMemoryWriter](https://github.com/accordproject/concerto/blob/main/packages/concerto-util/lib/inmemorywriter.js) which implements the same protocol but holds all contents in-memory.
 

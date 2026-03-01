@@ -40,7 +40,7 @@ concept Address {
 
 concept Person {
   o String name
-  o Address adress
+  o Address address
 }
 ```
 
