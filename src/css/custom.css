@@ -61,7 +61,7 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #f9f9f9;
+  --ifm-color-primary: #67f665;
   --ifm-color-primary-dark: #e0e0e0;
   --ifm-color-primary-darker: #d4d4d4;
   --ifm-color-primary-darkest: #aeaeae;
@@ -593,6 +593,23 @@
 }
 .footer__link-item:hover .footer-icon {
   opacity: 1;
+
+  /* =========================================
+   DocSearch Dark Theme Hover Fix
+========================================= */
+
+[data-theme='dark'] .DocSearch-Hit[aria-selected='true'],
+[data-theme='dark'] .DocSearch-Hit:hover {
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
+[data-theme='dark'] .DocSearch-Hit[aria-selected='true'] *,
+[data-theme='dark'] .DocSearch-Hit:hover * {
+  color: #ffffff !important;
+}
+
+
 }
 
 /* GitHub Link Styling */
