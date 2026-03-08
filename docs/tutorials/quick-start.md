@@ -43,7 +43,7 @@ Commands:
   concerto version <release>  modify the version of one or more model files
   concerto compare            compare two Concerto model files
   concerto infer              generate a concerto model from a source schema
-  concerto generate <mode>    generate a sample JSON object for a concept
+  concerto generate <mode>    generate a sample JSON object for a Concept
   concerto decorate           apply the decorators and vocabs to the target models from given list of dcs files and vocab files
   concerto extract-decorators extract the decorator command sets and vocabularies from a list of model files
   concerto convert-dcs        convert decorator command set between JSON and YAML formats
@@ -64,7 +64,7 @@ Open a code or text editor and create a plain text file, with the contents:
 ```concerto
 namespace test@1.0.0
 
-concept Person identified by email {
+Concept Person identified by email {
   o String email
   o DateTime dob
 }
@@ -74,10 +74,10 @@ Save the file as `test.cto`.
 
 ## Generate a sample instance of the model
 
-Run the Concerto CLI `generate sample` command to generate an instance of the `test@1.0.0.Person` concept:
+Run the Concerto CLI `generate sample` command to generate an instance of the `test@1.0.0.Person` Concept:
 
 ```base
-concerto generate sample --model test.cto --concept test@1.0.0.Person
+concerto generate sample --model test.cto --Concept test@1.0.0.Person
 ```
 
 The output should be similar to:
@@ -85,7 +85,7 @@ The output should be similar to:
 ```
 {
   "$class": "test@1.0.0.Person",
-  "email": "resource1",
+  "email": "Resource1",
   "dob": "2022-12-13T10:46:46.109Z"
 }
 ```
@@ -94,12 +94,12 @@ Save this output as `person.json`.
 
 ## Validate data using your data model
 
-Modify `person.json` to remove the `dob` property and save the file:
+Modify `person.json` to remove the `dob` Property and save the file:
 
 ```base
 {
   "$class": "test@1.0.0.Person",
-  "email": "resource1",
+  "email": "Resource1",
 }
 ```
 
@@ -113,17 +113,17 @@ The output should be:
 
 ```base
 10:50:57 - INFO: Input is invalid
-10:50:57 - ERROR: The instance "test@1.0.0.Person#resource1" is missing the required field "dob".
+10:50:57 - ERROR: The instance "test@1.0.0.Person#Resource1" is missing the required field "dob".
 ```
 
 Indicating that the `person.json` instance of `test@1.0.0.Person` is invalid with respect to the model.
 
-Now modify `test.cto` to declare that the `dob` property is optional:
+Now modify `test.cto` to declare that the `dob` Property is optional:
 
 ```concerto
 namespace test@1.0.0
 
-concept Person identified by email {
+Concept Person identified by email {
   o String email
   o DateTime dob optional
 }
@@ -139,11 +139,11 @@ The output should now be:
 
 ```bash
 10:53:43 - INFO: Input is valid
-{"$class":"test@1.0.0.Person","email":"resource1"}
+{"$class":"test@1.0.0.Person","email":"Resource1"}
 ```
 
 ## Congratulations!
 
 Well done, you've created your first Concerto model and used the CLI to validate data against the model! This is just the start...
 
-You may want to continue to read about [static code generation](/docs/category/code-generation), or using the [JavaScript runtime API](/docs/reference/api/api-js-validation) to introspect models at runtime.
+You may want to continue to read about [static code generation](../reference/codegen), or using the [JavaScript runtime API](../reference/api/using-js-validation) to introspect models at runtime.

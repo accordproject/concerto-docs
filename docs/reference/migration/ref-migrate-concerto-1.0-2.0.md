@@ -23,7 +23,7 @@ We are currently in the process of migrating the Accord Project stack to Concero
 - Add `DecoratorManager` to allow decorations on model to be externalized and applied to models
 
 ## Summary of API Changes
-- Added method `declarationKind()` to concept/asset etc to determine the type
+- Added method `declarationKind()` to Concept/asset etc to determine the type
 - Removed the method `hasInstance` to perform instanceof checks
 - `ModelFile.getAst` to return the metamodel for a model
 - `ModelManager.addCTOModel` to add a model as a CTO string to a model manager

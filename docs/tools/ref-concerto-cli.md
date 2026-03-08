@@ -25,7 +25,7 @@ Commands:
   concerto version <release>  modify the version of one or more model files
   concerto compare            compare two Concerto model files
   concerto infer              generate a concerto model from a source schema
-  concerto generate <mode>    generate a sample JSON object for a concept
+  concerto generate <mode>    generate a sample JSON object for a Concept
   concerto decorate           apply the decorators and vocabs to the target models from given list of dcs files and vocab files
   concerto extract-decorators extract the decorator command sets and vocabularies from a list of model files
   concerto convert-dcs        convert decorator command set between JSON and YAML formats
@@ -270,7 +270,7 @@ concerto infer --namespace com.example.restapi --format openapi --input example.
 ```md
 concerto generate <mode>
 
-generate a sample JSON object for a concept
+generate a sample JSON object for a Concept
 
 Positionals:
   mode  Generation mode. `empty` will generate a minimal example, `sample` will
@@ -282,7 +282,7 @@ Options:
       --help                   Show help                               [boolean]
       --model                  The file location of the source models
                                                               [array] [required]
-      --concept                The fully qualified name of the Concept type to
+      --Concept                The fully qualified name of the Concept type to
                                generate                      [string] [required]
       --includeOptionalFields  Include optional fields will be included in the
                                output                 [boolean] [default: false]

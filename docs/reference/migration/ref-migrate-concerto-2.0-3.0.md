@@ -32,7 +32,7 @@ namespace org.acme@1.0.0
 
 import com.sample.model@1.0.0.* // in strict:true mode this is an error
 
-concept Person {
+Concept Person {
 }
 ```
 

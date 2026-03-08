@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Introduction
 
-Concerto is a lightweight data modeling (schema) language and runtime for business concepts.
+Concerto is a lightweight data modeling (schema) language and runtime for business Concepts.
 
 Here is a simple model, expressed using the Concerto CTO syntax:
 
@@ -19,14 +19,14 @@ enum Country {
    o JAPAN
 }
 
-concept Address {
+Concept Address {
    o String street
    o String city
    o String postCode
    o Country country
 }
 
-concept Person identified by name  {
+Concept Person identified by name  {
   o String name
   o Address address optional
   @description("Height (cm)")

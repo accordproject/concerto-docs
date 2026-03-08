@@ -97,7 +97,7 @@ To avoid conflicts in the generated vocabulary YAML, the following keys are rest
 ```
 Namespace level: "namespace", "locale", "declarations"
 Declaration level: "properties", declaration’s own name (e.g., Vehicle, Color)
-Property level: property's own name (e.g., vin, weight)
+Property level: Property's own name (e.g., vin, weight)
 ```
 
 ## Creating a bootstrap Vocabulary file
@@ -128,7 +128,7 @@ vocabularyManager.addVocabulary(enVocString);
 ### Retrieving a Term
 
 Use the `getTerm` method on the `VocabularyManager` to retrieve a term for
-a declaration or property within a namespace:
+a declaration or Property within a namespace:
 
 
 ```
@@ -144,14 +144,14 @@ const term = vocabularyManager.getTerm('org.acme', 'en-gb', 'Vehicle', 'vin');
 ### Resolve a Term using ModelManager Type Hierarchy
 
 The `resolveTerm` method on the `VocabularyManager` may be used to lookup a term
-based on the type hierarchy defined by a `ModelManager`. In the example below, the property
+based on the type hierarchy defined by a `ModelManager`. In the example below, the Property
 `vin` is not defined on the `Truck` declaration but rather on the `Vehicle` super-type.
 
 ```
-modelManager = new ModelManager();
+ModelManager = new ModelManager();
 const model = fs.readFileSync('./test/org.acme.cto', 'utf-8');
-modelManager.addModelFile(model);
-const term = vocabularyManager.resolveTerm(modelManager, 'org.acme', 'en-gb', 'Truck', 'vin');
+ModelManager.addModelFile(model);
+const term = vocabularyManager.resolveTerm(ModelManager, 'org.acme', 'en-gb', 'Truck', 'vin');
 // term.should.equal('Vehicle Identification Number');
 ```
 
@@ -164,7 +164,7 @@ The return value from `validate` is an object containing information for the mis
 > Note that allowing vocabularies to evolve independently of their associated namespace provides definition and translation workflow flexibility.
 
 ```
-const result = vocabularyManager.validate(modelManager);
+const result = vocabularyManager.validate(./ModelManager.md);
 // result.missingVocabularies.length.should.equal(1);
 // result.missingVocabularies[0].should.equal('org.accordproject');
 // result.additionalVocabularies.length.should.equal(1);
@@ -178,4 +178,4 @@ const result = vocabularyManager.validate(modelManager);
 // result.vocabularies['org.acme/zh-cn'].additionalTerms.should.have.members([]);
 ```
 
-Please refer to the [JavaScript API](/docs/reference/api/ref-concerto-js-api) for the `concerto-vocabulary` module for detailed API guidance.
+Please refer to the [JavaScript API](../reference/api/ref-js-api) for the `concerto-vocabulary` module for detailed API guidance.

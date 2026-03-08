@@ -13,9 +13,9 @@ All software applications have a data or domain model. In fact, there are typica
 
 ## What is a Domain Model?
 
-A [domain model](https://en.wikipedia.org/wiki/Domain_model) is a system of abstractions that describes selected aspects of a sphere of knowledge, influence or activity (a domain).  The model can then be used to solve problems related to that domain. The domain model is a representation of meaningful real-world concepts pertinent to the domain that need to be modeled in software. 
+A [domain model](https://en.wikipedia.org/wiki/Domain_model) is a system of abstractions that describes selected aspects of a sphere of knowledge, influence or activity (a domain).  The model can then be used to solve problems related to that domain. The domain model is a representation of meaningful real-world Concepts pertinent to the domain that need to be modeled in software. 
 
-The concepts include the data involved in the business and rules the business uses in relation to that data. A domain model leverages natural language of the domain.
+The Concepts include the data involved in the business and rules the business uses in relation to that data. A domain model leverages natural language of the domain.
 
 ## Types of Models
 

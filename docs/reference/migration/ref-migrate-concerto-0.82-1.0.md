@@ -20,7 +20,7 @@ We are currently in the process of migrating the Accord Project stack to Concero
 
 See: [#62](https://github.com/accordproject/concerto/issues/62)
 
-An advanced feature of prior versions of Concerto was the ability to add a _system model_ to the `ModelManager`, which functioned as an implicit set of base types for concepts, assets, participants etc within the scope of the `ModelManager`. This feature complicated the APIs considerably, and it had the effect of making CTO models non-portable, in as far as they could only be loaded into a `ModelManager` that used the same set of system models.
+An advanced feature of prior versions of Concerto was the ability to add a _system model_ to the `ModelManager`, which functioned as an implicit set of base types for Concepts, assets, participants etc within the scope of the `ModelManager`. This feature complicated the APIs considerably, and it had the effect of making CTO models non-portable, in as far as they could only be loaded into a `ModelManager` that used the same set of system models.
 
 System models have therefore been removed from Concerto v1 — any base types should now be imported and referenced explicitly into model files.
 
@@ -44,15 +44,15 @@ The model below is valid with Concerto v1.
 ```
 namespace org.accordproject
 
-concept Address {
+Concept Address {
    o String country
 }
 
-concept Product identified by sku {
+Concept Product identified by sku {
    o String sku
 }
 
-concept Order identified {
+Concept Order identified {
    o Double amount
    o Address address
    --> Product product
@@ -75,10 +75,10 @@ The `Concerto` API is much more functional in nature, and allows plain-old-JavaS
 
 ```
 const { ModelManager, Concerto } = require('@accordproject/concerto-core');
-const modelManager = new ModelManager();
+const ModelManager = new ModelManager();
 
-modelManager.addModelFile( `namespace org.acme.address
-concept PostalAddress {
+ModelManager.addModelFile( `namespace org.acme.address
+Concept PostalAddress {
   o String streetAddress optional
   o String postalCode optional
   o String postOfficeBoxNumber optional
@@ -92,7 +92,7 @@ const postalAddress = {
    streetAddress : '1 Maine Street'
 };
 
-const concerto = new Concerto(modelManager);
+const concerto = new Concerto(./ModelManager.md);
 concerto.validate(postalAddress);
 ``` 
 
@@ -125,11 +125,11 @@ A new simplified `Concerto` class has been created to validate JSON data against
 ```
 
 :::note
-`AssetDeclaration` and other stereotypes now extend `IdentifiedDeclaration` rather than `ClassDeclaration`. Methods relating to whether the type can be the target of a relationship have been removed as all types can now be used with relationships, and methods have been added to denote whether a type has an automatic (system) identifying field (primary key), no identifying field, or is using an explicitly defined identifying field.
+`AssetDeclaration` and other stereotypes now extend `IdentifiedDeclaration` rather than `Class Declaration`. Methods relating to whether the type can be the target of a relationship have been removed as all types can now be used with relationships, and methods have been added to denote whether a type has an automatic (system) identifying field (primary key), no identifying field, or is using an explicitly defined identifying field.
 :::
 
 ```
-< class AssetDeclaration extends ClassDeclaration {
+< class AssetDeclaration extends Class Declaration {
 > class AssetDeclaration extends IdentifiedDeclaration {
 <    + boolean isRelationshipTarget() 
 <    + string getSystemType() 
@@ -143,27 +143,27 @@ A new simplified `Concerto` class has been created to validate JSON data against
 ```
 
 ```
-< class EventDeclaration extends ClassDeclaration {
+< class EventDeclaration extends Class Declaration {
 > class EventDeclaration extends IdentifiedDeclaration {
 <    + string getSystemType() 
 ```
 
 ```
-> class IdentifiedDeclaration extends ClassDeclaration {
+> class IdentifiedDeclaration extends Class Declaration {
 >    + void constructor(ModelFile,Object) throws IllegalModelException
 >    + boolean hasInstance(object) 
 > }
 ```
 
 ```
-< class ParticipantDeclaration extends ClassDeclaration {
+< class ParticipantDeclaration extends Class Declaration {
 > class ParticipantDeclaration extends IdentifiedDeclaration {
 <    + boolean isRelationshipTarget() 
 <    + string getSystemType() 
 ```
 
 ```
-< class TransactionDeclaration extends ClassDeclaration {
+< class TransactionDeclaration extends Class Declaration {
 > class TransactionDeclaration extends IdentifiedDeclaration {
 <    + string getSystemType() 
 ```
@@ -176,8 +176,8 @@ A new simplified `Concerto` class has been created to validate JSON data against
 class ModelFile {
 <    + void constructor(ModelManager,string,string,boolean) throws IllegalModelException
 >    + void constructor(ModelManager,string,string) throws IllegalModelException
-<    + ClassDeclaration[] getDeclarations(Function,Boolean) 
->    + ClassDeclaration[] getDeclarations(Function) 
+<    + Class Declaration[] getDeclarations(Function,Boolean) 
+>    + Class Declaration[] getDeclarations(Function) 
 <    + boolean isSystemModelFile() 
 }
 ```
@@ -193,7 +193,7 @@ class ModelFile {
 ```
 
 :::note
-`Resource` has extended to capture that some resources are concepts, and are identifiable.
+`Resource` has extended to capture that some Resources are Concepts, and are identifiable.
 :::
 
 ```
@@ -242,7 +242,7 @@ class ModelManager {
 <    + Object[] getModels(Object,boolean,boolean) 
 >    + void writeModelsToFileSystem(String,Object,boolean) 
 >    + Object[] getModels(Object,boolean) 
-<    + ClassDeclaration[] getSystemTypes() 
+<    + Class Declaration[] getSystemTypes() 
 }
 ```
 
