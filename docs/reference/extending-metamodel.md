@@ -6,7 +6,7 @@ sidebar_position: 1
 
 The Concerto metamodel defines the types of models that you can use Concerto to describe. The elements on the current metamodel are documented in the [design specification](../design/specification/model-introduction).
 
-The Concerto metamodel is a _Goldilocks_ model, in as far as it offers _just enough_ features to describe real-world domain models, whilst remaining relatively easy to map to a wide variety of [code generation targets](../codegen). 
+The Concerto metamodel is a _Goldilocks_ model, in as far as it offers _just enough_ features to describe real-world domain models, whilst remaining relatively easy to map to a wide variety of [code generation targets](/docs/category/code-generation). 
 
 Concerto is a **platform independent** modelling language. The Concerto metamodel will never support all the features of a platform specific model, such as OWL, XML Schema, JSON Schema, TypeScript or Rust. It's value is in being able to capture a useful subset (lowest common denominator) of a wide variety of metamodels and to provide a CLI and runtime APIs to work with models as data.
 
@@ -14,7 +14,7 @@ Concerto is a **platform independent** modelling language. The Concerto metamode
 
 Extensions to the Concerto metamodel _do occur_, but they are infrequent and are carefully considered, due to the extensive work involved in extending the complete Concerto stack to support new metamodel constructs. Backwards compatibility is a major consideration.
 
-Before undertaking an extension of the Concerto metamodel upstream impact must be considered. [Upstream tools that use Concerto](../tools/others) (both Open Source and commercial) should be consulted. Early and clear communication via the Accord Project Technology Working Group is vital for success.
+Before undertaking an extension of the Concerto metamodel upstream impact must be considered. [Upstream tools that use Concerto](../tools/other-tools) (both Open Source and commercial) should be consulted. Early and clear communication via the Accord Project Technology Working Group is vital for success.
 
 Metamodel changes that are fundamentally hard to map to the majority of supported code generation targets are unlikely to be approved, as are metamodel changes that undermine the ability for downstream tools to implement static analysis over Concerto models, or user interface generation.
 
