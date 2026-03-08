@@ -178,4 +178,4 @@ const result = vocabularyManager.validate(./ModelManager.md);
 // result.vocabularies['org.acme/zh-cn'].additionalTerms.should.have.members([]);
 ```
 
-Please refer to the [JavaScript API](../reference/api/ref-js-api) for the `concerto-vocabulary` module for detailed API guidance.
+Please refer to the [JavaScript API](../reference/api/ref-concerto-js-api) for the `concerto-vocabulary` module for detailed API guidance.
