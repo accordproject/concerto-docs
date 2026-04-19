@@ -32,7 +32,7 @@
     "regenerator-runtime": "0.14.0"
   },
   "devDependencies": {
-    "@docusaurus/faster": "^3.10.0",
+    "@docusaurus/faster": "3.10.0",
     "@docusaurus/module-type-aliases": "3.10.0",
     "@types/node": "20.11.24",
     "jsdoc-to-markdown": "8.0.0",
