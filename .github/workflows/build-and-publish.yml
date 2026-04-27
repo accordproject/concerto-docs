@@ -2,7 +2,10 @@ name: Build and Deploy
 
 on:
   push:
-    branches: 
+    branches:
+      - main
+  pull_request:
+    branches:
       - main
 
 permissions:
@@ -13,6 +16,35 @@ jobs:
 
   build:
 
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+
+      - run: npm install -g npm@latest
+
+      - name: NPM Install
+        run: npm install
+
+      - name: NPM Build
+        run: npm run build
+
+  deploy:
+
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     environment: production
     timeout-minutes: 30
@@ -31,23 +63,16 @@ jobs:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
 
-        # Ensure npm 11.5.1 or later for trusted publishing
       - run: npm install -g npm@latest
 
       - name: NPM Install
-        if: github.ref == 'refs/heads/main'
-        run: |
-          npm install
+        run: npm install
 
       - name: NPM Build
-        if: github.ref == 'refs/heads/main'
-        run: |
-          npm run build
+        run: npm run build
 
-      - name: Set S3 
-        if: github.ref == 'refs/heads/main'
-        run: |
-            echo "AWS_S3_BUCKET=${{secrets.AWS_S3_BUCKET}}" >> $GITHUB_ENV
+      - name: Set S3
+        run: echo "AWS_S3_BUCKET=${{secrets.AWS_S3_BUCKET}}" >> $GITHUB_ENV
 
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@e3dd6a429d7300a6a4c196c26e071d42e0343502
