@@ -54,16 +54,18 @@ Import aliasing is enabled by default in Concerto v4. If you are using an older 
 
 ## Strict mode
 
-Concerto v4 runs in strict mode by default, which requires versioned namespaces and versioned imports. Unversioned namespaces and wildcard imports are not permitted in strict mode.
+Concerto v4 always enforces strict mode. Versioned namespaces and explicit versioned imports are **required**. Unversioned namespaces and wildcard imports are not supported.
 
-For backwards compatibility with older models, you can disable strict mode by passing `strict: false` to the `ModelManager` constructor. In `strict:false` mode, imports may reference unversioned namespaces or import all types in a namespace using wildcards.
+:::note Migrating from Concerto 3.x
+Concerto 3.x allowed `strict: false` on the `ModelManager` constructor, which permitted unversioned namespaces and wildcard imports. This option has been removed in v4. All models must use versioned namespaces (e.g. `namespace org.acme@1.0.0`) and explicit imports (e.g. `import org.acme@1.0.0.{Person}`).
+:::
 
-> Migrate models to use versioned namespaces and imports. `strict:false` support may be removed in a future release.
+The following patterns are no longer valid in Concerto v4:
 
 ```js
-// import a type from an unversioned namespace (only in strict:false mode)
+// ❌ unversioned namespace import — not supported in v4
 import org.accordproject.address.PostalAddress
-// import all types from an unversioned namespace (only in strict:false mode)
+// ❌ wildcard import — not supported in v4
 import org.accordproject.address.*
 ```
 
