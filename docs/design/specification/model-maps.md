@@ -5,7 +5,7 @@ sidebar_position: 9
 ---
 A Map is a type which models data as key-value pairs. Conceptually, it relates closely to a Map type in Javascript or C#.
 
-To enable this feature in Concerto, set an environment variable of `ENABLE_MAP_TYPE='true'` or provide `enableMapType` as an option to the Concerto `ModelManager` constructor.
+Map support is enabled by default in Concerto v4. If you are using an older version of Concerto, set environment variable `ENABLE_MAP_TYPE='true'` or pass `enableMapType: true` as an option to the `ModelManager` constructor.
 
 ## Supported Key Types
 

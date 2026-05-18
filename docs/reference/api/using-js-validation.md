@@ -7,10 +7,8 @@ title: Validating Data
 
 Concerto provides a JSON serialization for instances of a model, and APIs to validate JSON data against a model.
 
-[Run this code on replit](https://replit.com/@dselman/AccordProjectConcerto)
-
 ```js
-const { ModelManager, Concerto } = require('@accordproject/concerto-core');
+const { ModelManager } = require('@accordproject/concerto-core');
 
 try {
   // create the model manager, used to manage a consistent set of
@@ -18,7 +16,7 @@ try {
   const mm = new ModelManager();
 
   // add a CTO file (as a string) to the model manager
-  mm.addModel(`namespace test@1.0.0
+  mm.addCTOModel(`namespace test@1.0.0
 
 abstract concept Person
 {
@@ -36,11 +34,6 @@ concept Car identified by vin
 	o Person owner
 }`);
 
-  // create the Concerto instance to validate data 
-  // against the model and to introspect the model
-  // the Concerto instance is bound to a model manager
-  const concerto = new Concerto(mm);
-
   // define some sample data, consistent with the model
   const data = {
     $class: "test@1.0.0.Car",
@@ -53,12 +46,13 @@ concept Car identified by vin
     }
   };
 
-  // validate the data
-  concerto.validate(data);
-  console.log('Valid data!')
+  // validate the data using the Serializer — fromJSON throws if the data is invalid
+  const serializer = mm.getSerializer();
+  serializer.fromJSON(data);
+  console.log('Valid data!');
 
   // get the type declaration for the data
-  const typeDeclaration = concerto.getTypeDeclaration(data);
+  const typeDeclaration = mm.getType(data.$class);
 
   // get the fully-qualified name for the type declaration
   const fqn = typeDeclaration.getFullyQualifiedName();
@@ -67,8 +61,8 @@ concept Car identified by vin
   typeDeclaration.getProperties().forEach(p => console.log(`- ${p.getName()} : ${p.getFullyQualifiedTypeName()}`));
 }
 catch (err) {
-  console.log(err)
+  console.log(err);
 }
 ```
 
-These APIs allow you to examine the declared properties, super types and meta-properies for a modelled type.
+These APIs allow you to examine the declared properties, super types and meta-properties for a modelled type.

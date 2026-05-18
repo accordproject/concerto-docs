@@ -95,8 +95,6 @@ Options:
       --output             output directory path [string] [default: "./output/"]
       --metamodel          Include the Concerto Metamodel in the output
                                                       [boolean] [default: false]
-      --strict             Require versioned namespaces and imports
-                                                      [boolean] [default: false]
       --useSystemTextJson  Compile for System.Text.Json library (`csharp` target
                            only)                      [boolean] [default: false]
       --useNewtonsoftJson  Compile for Newtonsoft.Json library (`csharp` target
@@ -287,8 +285,6 @@ Options:
       --includeOptionalFields  Include optional fields will be included in the
                                output                 [boolean] [default: false]
       --metamodel              Include the Concerto Metamodel in the output
-                                                      [boolean] [default: false]
-      --strict                 Require versioned namespaces and imports
                                                       [boolean] [default: false]
 ```
 

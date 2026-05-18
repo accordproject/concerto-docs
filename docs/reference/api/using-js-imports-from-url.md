@@ -5,12 +5,12 @@ title: Imports for URL
 
 # Defining Models Using Import from URL
 
-Concero models can be imported from a publicly accessible URL.
+Concerto models can be imported from a publicly accessible URL.
 
 [Run this code on replit](https://replit.com/@dselman/AccordProjectConcerto-Imports-From-URL)
 
 ```js
-const { ModelManager, Concerto } = require('@accordproject/concerto-core');
+const { ModelManager } = require('@accordproject/concerto-core');
 
 try {
   // create the model manager, used to manage a consistent set of

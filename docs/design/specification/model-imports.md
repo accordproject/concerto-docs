@@ -49,21 +49,23 @@ concept Person{
 }
 ```
 
-**Note:**  Aliasing is disabled by default in concerto. To enable this feature in Concerto, set environment variable `IMPORT_ALIASING='true'` or provide `importAliasing` as an option to the Concerto ModelManager constructor.
+Import aliasing is enabled by default in Concerto v4. If you are using an older version of Concerto, set environment variable `IMPORT_ALIASING='true'` or pass `importAliasing: true` as an option to the `ModelManager` constructor.
 
 
-## Strict:false mode
+## Strict mode
 
-For backwards compatibility, and when running with `strict:false` imports may import types from unversioned namespaces, or may import all types in a namespace. 
+Concerto v4 always enforces strict mode. Versioned namespaces and explicit versioned imports are **required**. Unversioned namespaces and wildcard imports are not supported.
 
-> Please migrate models to use versioned namespaces and imports as this capability will be deprecated and removed in a future major release.
+:::note Migrating from Concerto 3.x
+Concerto 3.x allowed `strict: false` on the `ModelManager` constructor, which permitted unversioned namespaces and wildcard imports. This option has been removed in v4. All models must use versioned namespaces (e.g. `namespace org.acme@1.0.0`) and explicit imports (e.g. `import org.acme@1.0.0.{Person}`).
+:::
 
-Imports can be either qualified or can use wildcards.
+The following patterns are no longer valid in Concerto v4:
 
 ```js
-// import a type from an unversioned namespace (only if strict=false)
+// ❌ unversioned namespace import — not supported in v4
 import org.accordproject.address.PostalAddress
-// import all types from an unversioned namespace (only if strict=false)
+// ❌ wildcard import — not supported in v4
 import org.accordproject.address.*
 ```
 

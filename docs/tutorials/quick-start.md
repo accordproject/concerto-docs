@@ -6,7 +6,7 @@ sidebar_position: 3
 
 ### What you'll need
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
+- [Node.js](https://nodejs.org/en/download/) version 22 or above:
   - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
 
 ## Install the Concerto Command Line Interface (CLI)

@@ -10,7 +10,7 @@ Concerto models in one namespace can import types defined in other namespaces.
 [Run this code on replit](https://replit.com/@dselman/AccordProjectConcerto-Imports)
 
 ```js
-const { ModelManager, Concerto } = require('@accordproject/concerto-core');
+const { ModelManager } = require('@accordproject/concerto-core');
 
 try {
   // create the model manager, used to manage a consistent set of
