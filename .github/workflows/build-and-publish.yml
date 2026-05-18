@@ -33,8 +33,6 @@ jobs:
           node-version: '22'
           registry-url: 'https://registry.npmjs.org'
 
-      - run: npm install -g npm@latest
-
       - name: NPM Install
         run: npm install
 
@@ -62,8 +60,6 @@ jobs:
         with:
           node-version: '22'
           registry-url: 'https://registry.npmjs.org'
-
-      - run: npm install -g npm@latest
 
       - name: NPM Install
         run: npm install
