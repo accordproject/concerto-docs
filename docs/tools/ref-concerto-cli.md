@@ -96,7 +96,7 @@ Options:
       --metamodel          Include the Concerto Metamodel in the output
                                                       [boolean] [default: false]
       --strict             Require versioned namespaces and imports
-                                                      [boolean] [default: false]
+                                                       [boolean] [default: true]
       --useSystemTextJson  Compile for System.Text.Json library (`csharp` target
                            only)                      [boolean] [default: false]
       --useNewtonsoftJson  Compile for Newtonsoft.Json library (`csharp` target
@@ -289,7 +289,7 @@ Options:
       --metamodel              Include the Concerto Metamodel in the output
                                                       [boolean] [default: false]
       --strict                 Require versioned namespaces and imports
-                                                      [boolean] [default: false]
+                                                       [boolean] [default: true]
 ```
 
 ## concerto decorate

@@ -10,7 +10,7 @@ Decorator Command Sets are used to externalize decorators from models and to sel
 [Run this code on replit](https://replit.com/@dselman/AccordProjectConcerto-Decorator-Command-Set)
 
 ```js
-const { ModelManager, Concerto, DecoratorManager } = require('@accordproject/concerto-core');
+const { ModelManager, DecoratorManager } = require('@accordproject/concerto-core');
 const { Printer } = require('@accordproject/concerto-cto');
 
 try {
@@ -19,7 +19,7 @@ try {
   const mm = new ModelManager();
 
   // add a CTO file (as a string) to the model manager
-  mm.addModel(`namespace test@1.0.0
+  mm.addCTOModel(`namespace test@1.0.0
 
 abstract concept Person identified by ssn
 {

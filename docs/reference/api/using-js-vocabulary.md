@@ -10,7 +10,7 @@ The Vocabulary Manager manages a set of localised terms for a model.
 [Run this code on replit](https://replit.com/@dselman/AccordProjectConcerto-Vocabulary)
 
 ```js
-const { ModelManager, Concerto, DecoratorManager } = require('@accordproject/concerto-core');
+const { ModelManager, DecoratorManager } = require('@accordproject/concerto-core');
 const { VocabularyManager } = require('@accordproject/concerto-vocabulary');
 const { Printer } = require('@accordproject/concerto-cto');
 
@@ -20,7 +20,7 @@ try {
   const mm = new ModelManager();  
 
   // add a CTO file (as a string) to the model manager
-  mm.addModel(`namespace test@1.0.0
+  mm.addCTOModel(`namespace test@1.0.0
 
 abstract concept Person
 {
