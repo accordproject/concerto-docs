@@ -21,16 +21,16 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [22.x]
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Use Node.js 20.x
+      - name: Use Node.js 22.x
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           registry-url: 'https://registry.npmjs.org'
 
       - run: npm install -g npm@latest
@@ -51,16 +51,16 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [22.x]
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Use Node.js 20.x
+      - name: Use Node.js 22.x
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           registry-url: 'https://registry.npmjs.org'
 
       - run: npm install -g npm@latest
