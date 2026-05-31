@@ -30,7 +30,7 @@ const startPaths = [
   },
   {
     title: 'Use the SDK',
-    description: 'Parse, validate and generate code from JavaScript.',
+    description: 'Parse, validate and generate code from TypeScript.',
     href: '/docs/category/using-the-api',
     target: '_self',
   },
