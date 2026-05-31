@@ -493,56 +493,10 @@
 
 /* Cross Platform */
 
-.CrossPlatform {
-  overflow: hidden;
-}
-
-@media only screen and (max-width: 960px) {
-  .CrossPlatform .column.last {
-    max-height: 300px;
-    overflow-y: auto ;
-  }
-  .CrossPlatform .column.last::-webkit-scrollbar {
-    width: 7px;
-}
-
-}
-
-@media only screen and (min-width: 481px) and (max-width: 960px) {
-  .CrossPlatform .column.last {
-    width: 66.7%;
-    margin: 0 auto;
-  }
-  .CrossPlatform .column.last::-webkit-scrollbar {
-    width: 7px;
-}
-
-}
-
-@media only screen and (min-width: 961px) {
-  .CrossPlatform {
-    max-height: 800px;
-  }
-
-  .CrossPlatform .column.last {
-    max-height: 800px;
-    overflow-y: auto;
-    
-  }
-
-  .CrossPlatform .column.last::-webkit-scrollbar {
-    width: 7px;
-}
-
-  /* Correct for whitespace in the image of phones */
-  .CrossPlatform .column.left {
-    margin-top: -25px;
-  }
-
-  .CrossPlatform .prism-code {
-    margin-top: -25px;
-    overflow-y: auto;
-  }
+.CrossPlatform .content {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Schemas for People */

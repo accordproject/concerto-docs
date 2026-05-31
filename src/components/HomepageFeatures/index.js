@@ -3,12 +3,7 @@ import clsx from 'clsx';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import GitHubButton from 'react-github-btn';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
-
-import { Mermaid } from '../mermaid';
-import samples from '../samples';
 
 import styles from './styles.module.css';
 
@@ -140,22 +135,6 @@ Bootstrap your models from existing <a href="/docs/reference/import/infer-openap
   }
    `,
 };
-
-function CodeSamples(){
-  return (
-    <Tabs>
-      <TabItem value="uml" label="UML" default>
-        <Mermaid chart={samples.mermaidUml} />
-      </TabItem>
-      <TabItem value="typescript" label="TypeScript">
-        <CodeBlock language="typescript" theme="dark">{samples.typescript}</CodeBlock>
-      </TabItem>
-      <TabItem value="jsonSchema" label="JSON Schema">
-        <CodeBlock language="json">{samples.jsonSchema}</CodeBlock>
-      </TabItem>
-    </Tabs>
-  )
-}
 
 /*Adjust the Svg property with current files*/
 const FeatureList = [
@@ -296,16 +275,12 @@ function SchemasPeople() {
 function CrossPlatform() {
   return (
     <Section className="CrossPlatform" background="light">
-      <TwoColumns
-        reverse
-        columnOne={
-          <TextColumn
-            title="Platform Neutral, but Runtime Compatible"
-            text={textContent.languageConversion}
-          />
-        }
-        columnTwo={<CodeSamples/>}
-      />
+      <div className="content">
+        <TextColumn
+          title="Platform Neutral, but Runtime Compatible"
+          text={textContent.languageConversion}
+        />
+      </div>
     </Section>
   );
 }
