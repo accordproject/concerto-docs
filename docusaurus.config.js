@@ -77,6 +77,11 @@ const config = {
             label: 'Docs',
           },
           {
+            href: 'https://concerto-playground.accordproject.org',
+            label: 'Playground',
+            position: 'right',
+          },
+          {
             type: 'doc',
             docId: 'contributing',
             position: 'right',
