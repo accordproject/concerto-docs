@@ -31,7 +31,7 @@ const startPaths = [
   {
     title: 'Use the SDK',
     description: 'Parse, validate and generate code from JavaScript.',
-    href: '/docs/api/ref-js-api',
+    href: '/docs/category/using-the-api',
     target: '_self',
   },
   {
@@ -73,7 +73,6 @@ function HomepageHeader() {
   return (
     <Section background="dark" className="HeaderHero">
         <div className="socialLinks">
-        <TwitterButton accountName="accordhq" />
         <GitHubStarButton />
       </div>
       <div className="container">
@@ -223,17 +222,6 @@ function TextColumn({title, text, moreContent}) {
       <div dangerouslySetInnerHTML={{__html: text}} />
       {moreContent}
     </>
-  );
-}
-
-function TwitterButton({accountName}) {
-  return (
-    <a
-      href={`https://twitter.com/intent/follow?screen_name=${accountName}&region=follow_link`}
-      className="twitter-follow-button">
-      <div className="icon" />
-      Follow @{accountName}
-    </a>
   );
 }
 
