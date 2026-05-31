@@ -25,7 +25,7 @@ const startPaths = [
   {
     title: 'Learn the language',
     description: 'Start with the basics of modeling in Concerto.',
-    href: '/docs/design/specification/model-namespaces',
+    href: '/docs/design/specification/model-introduction',
     target: '_self',
   },
   {
