@@ -3,31 +3,62 @@ import clsx from 'clsx';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import GitHubButton from 'react-github-btn';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
-
-import { Mermaid } from '../mermaid';
-import samples from '../samples';
 
 import styles from './styles.module.css';
 
+const PLAYGROUND_URL = 'https://concerto-playground.accordproject.org';
+
+const startPaths = [
+  {
+    title: 'Try the Playground',
+    description: 'Write a model and see it compile live — no install.',
+    href: PLAYGROUND_URL,
+    target: '_blank',
+    featured: true,
+  },
+  {
+    title: 'Learn the language',
+    description: 'Start with the basics of modeling in Concerto.',
+    href: '/docs/design/specification/model-introduction',
+    target: '_self',
+  },
+  {
+    title: 'Use the SDK',
+    description: 'Parse, validate and generate code from TypeScript.',
+    href: '/docs/category/using-the-api',
+    target: '_self',
+  },
+  {
+    title: 'Use the CLI',
+    description: 'Validate and compile models from your terminal.',
+    href: '/docs/tutorials/quick-start',
+    target: '_self',
+  },
+];
+
+function PathCard({title, description, href, target, featured}) {
+  const resolvedHref = useBaseUrl(href);
+  return (
+    <a
+      className={`PathCard ${featured ? 'featured' : ''}`}
+      href={resolvedHref}
+      target={target}
+      rel={target === '_blank' ? 'noopener noreferrer' : undefined}>
+      {featured && <span className="PathCard-badge">Recommended</span>}
+      <h3 className="PathCard-title">{title}</h3>
+      <p className="PathCard-description">{description}</p>
+    </a>
+  );
+}
+
 function HomeCallToAction() {
   return (
-    <>
-      <ActionButton
-        type="primary"
-        href={useBaseUrl('/docs/intro')}
-        target="_self">
-        Learn More
-      </ActionButton>
-      <ActionButton
-        type="secondary"
-        href={useBaseUrl('/docs/tutorials/quick-start')}
-        target="_self">
-        Quick Start Tutorial
-      </ActionButton>
-    </>
+    <div className="PathChooser">
+      {startPaths.map((path, idx) => (
+        <PathCard key={idx} {...path} />
+      ))}
+    </div>
   );
 }
 
@@ -37,7 +68,6 @@ function HomepageHeader() {
   return (
     <Section background="dark" className="HeaderHero">
         <div className="socialLinks">
-        <TwitterButton accountName="accordhq" />
         <GitHubStarButton />
       </div>
       <div className="container">
@@ -106,22 +136,6 @@ Bootstrap your models from existing <a href="/docs/reference/import/infer-openap
    `,
 };
 
-function CodeSamples(){
-  return (
-    <Tabs>
-      <TabItem value="uml" label="UML" default>
-        <Mermaid chart={samples.mermaidUml} />
-      </TabItem>
-      <TabItem value="typescript" label="TypeScript">
-        <CodeBlock language="typescript" theme="dark">{samples.typescript}</CodeBlock>
-      </TabItem>
-      <TabItem value="jsonSchema" label="JSON Schema">
-        <CodeBlock language="json">{samples.jsonSchema}</CodeBlock>
-      </TabItem>
-    </Tabs>
-  )
-}
-
 /*Adjust the Svg property with current files*/
 const FeatureList = [
   {
@@ -174,7 +188,11 @@ function Heading({text}) {
 
 function ActionButton({href, type = 'primary', target, children}) {
   return (
-    <a className={`ActionButton ${type}`} href={href} target={target}>
+    <a
+      className={`ActionButton ${type}`}
+      href={href}
+      target={target}
+      rel={target === '_blank' ? 'noopener noreferrer' : undefined}>
       {children}
     </a>
   );
@@ -187,17 +205,6 @@ function TextColumn({title, text, moreContent}) {
       <div dangerouslySetInnerHTML={{__html: text}} />
       {moreContent}
     </>
-  );
-}
-
-function TwitterButton({accountName}) {
-  return (
-    <a
-      href={`https://twitter.com/intent/follow?screen_name=${accountName}&region=follow_link`}
-      className="twitter-follow-button">
-      <div className="icon" />
-      Follow @{accountName}
-    </a>
   );
 }
 
@@ -268,16 +275,44 @@ function SchemasPeople() {
 function CrossPlatform() {
   return (
     <Section className="CrossPlatform" background="light">
-      <TwoColumns
-        reverse
-        columnOne={
-          <TextColumn
-            title="Platform Neutral, but Runtime Compatible"
-            text={textContent.languageConversion}
+      <div className="content">
+        <TextColumn
+          title="Platform Neutral, but Runtime Compatible"
+          text={textContent.languageConversion}
+        />
+      </div>
+    </Section>
+  );
+}
+
+function PlaygroundSection() {
+  return (
+    <Section className="Playground" background="tint">
+      <div className="content">
+        <Heading text="Try Concerto in your browser" />
+        <p className="Playground-lead">
+          No install required. Write a <code>.cto</code> model and watch it
+          compile live to TypeScript, Java, Go, JSON Schema, GraphQL, Protobuf
+          and more — everything runs client-side in your browser.
+        </p>
+        <div className="Playground-window">
+          <div className="Playground-chrome">
+            <span className="Playground-dots" />
+            <span className="Playground-url">concerto-playground.accordproject.org</span>
+          </div>
+          <iframe
+            className="Playground-frame"
+            src={PLAYGROUND_URL}
+            title="Concerto Playground"
+            loading="lazy"
           />
-        }
-        columnTwo={<CodeSamples/>}
-      />
+        </div>
+        <div className="Playground-cta">
+          <ActionButton type="primary" href={PLAYGROUND_URL} target="_blank">
+            Open full Playground ↗
+          </ActionButton>
+        </div>
+      </div>
     </Section>
   );
 }
@@ -289,19 +324,33 @@ function GetStarted() {
         <Heading text="Give it a try" />
         <ol className="steps">
           <li>
-            <p>Run this</p>
+            <p>No install needed — open the Playground</p>
+            <ActionButton type="primary" href={PLAYGROUND_URL} target="_blank">
+              Launch the Playground ↗
+            </ActionButton>
+          </li>
+          <li>
+            <p>Ready to build? Install the CLI</p>
             <div className="terminal">
               <code>npm i -g @accordproject/concerto-cli</code>
             </div>
           </li>
           <li>
             <p>Read these</p>
-            <ActionButton
-              type="primary"
-              href={useBaseUrl('/docs/tutorials/quick-start')}
-              target="_self">
-              Quick Start Tutorial
-            </ActionButton>
+            <div className="GetStarted-links">
+              <ActionButton
+                type="secondary"
+                href={useBaseUrl('/docs/tutorials/quick-start')}
+                target="_self">
+                Quick Start Tutorial
+              </ActionButton>
+              <ActionButton
+                type="secondary"
+                href="https://concerto.accordproject.org/docs/category/using-the-api"
+                target="_self">
+                SDK Reference
+              </ActionButton>
+            </div>
           </li>
         </ol>
       </div>
@@ -314,6 +363,7 @@ export default function HomepageFeatures() {
     <>
       <HomepageHeader />
       <main>
+        <PlaygroundSection />
         <Section className={styles.features}>
           <div className="container">
             <div className="row">
