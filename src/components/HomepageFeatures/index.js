@@ -209,7 +209,11 @@ function Heading({text}) {
 
 function ActionButton({href, type = 'primary', target, children}) {
   return (
-    <a className={`ActionButton ${type}`} href={href} target={target}>
+    <a
+      className={`ActionButton ${type}`}
+      href={href}
+      target={target}
+      rel={target === '_blank' ? 'noopener noreferrer' : undefined}>
       {children}
     </a>
   );
@@ -367,7 +371,7 @@ function GetStarted() {
               </ActionButton>
               <ActionButton
                 type="secondary"
-                href={useBaseUrl('/docs/api/ref-js-api')}
+                href="https://concerto.accordproject.org/docs/category/using-the-api"
                 target="_self">
                 SDK Reference
               </ActionButton>
