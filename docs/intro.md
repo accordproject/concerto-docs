@@ -58,7 +58,15 @@ Infer models from other formats:
 - JSON Schema
 - OpenAPI v3 specification
 
-## Accord Project 
+## Agent Skills
+
+You can install agent skills using
+
+```sh
+npx skills add accordproject/skills
+```
+
+## Accord Project
 
 Concerto is maintained by Accord Project: an open source, non-profit, initiative working to transform contract management and contract automation by digitizing contracts. Accord Project operates under the umbrella of the [Linux Foundation][linuxfound]. The technical charter for the Accord Project can be found [here][charter].
 
