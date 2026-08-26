@@ -47,6 +47,7 @@ We guarantee to support values that are included by the ISO 8601-1:2019, RFC 333
 | `range` | declares a valid range for numeric properties|
 | `regex` | declares a validation regex for string properties|
 | `length` | declares a minimum and maximum char length for string properties|
+| `size` | declares a minimum and maximum element count for array or map-typed properties|
 
 `String` fields may include an optional regular expression, which is used to validate the contents of the field. Careful use of field validators allows Concerto to perform rich data validation, leading to fewer errors and less boilerplate application code.
 
@@ -78,6 +79,27 @@ The example below validates that a `String` variable starts with `abc`:
   o Double doubleLowerUpper range=[-1.0,1.0] // greater than or equal to -1 and less than or equal to 1
   o Double doubleLower range=[-1.0,] // greater than or equal to -1
   o Double doubleUpper range=[,1.0] // less than or equal to 1
+```
+
+Array properties and map-typed properties may include an optional size expression, which is used to validate the number of elements in the collection. When specified, at least one of the minimum or maximum bounds must be provided. The maxSize must be greater than or equal to the minSize.
+
+```
+  o String[] tags size=[1,10] // at least 1 and at most 10 elements
+  o Integer[] scores size=[2,] // at least 2 elements
+  o Person[] members size=[,5] // at most 5 elements
+```
+
+The `size` validator can also be applied to properties whose type is a map declaration:
+
+```
+  map PhoneBook {
+    o String
+    o String
+  }
+
+  concept Contact {
+    o PhoneBook numbers size=[1,3] // map must have between 1 and 3 entries
+  }
 ```
 
 #### Example
