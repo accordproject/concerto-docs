@@ -178,6 +178,35 @@ Source files have been moved from `lib/` to `src/` directories across all packag
 
 If you import from the package's public API (e.g., `require('@accordproject/concerto-core')`), no changes are required.
 
+### `Decorated` Base Class Import Path
+
+In Concerto 3.x, TypeScript consumers that needed the `Decorated` base class — the supertype of all decorated model elements (`ClassDeclaration`, `Field`, `ScalarDeclaration`, etc.) — could access it via the `types/` directory of the published package:
+
+```typescript
+// 3.x — worked because the package had no `exports` field
+import Decorated from '@accordproject/concerto-core/types/lib/introspect/decorated';
+```
+
+In 4.0 this path no longer exists: the `types/lib/introspect/` directory structure is absent from the published package, `Decorated` is not exported from the main entry point, and the package now has an `exports` field that module resolvers enforce. TypeScript with `moduleResolution: nodenext` or `bundler` will report `TS2307: Cannot find module` for the old path.
+
+**Option A — deep import via the `dist/*` escape hatch (preserves the `Decorated` type):**
+
+```typescript
+// 4.0 — use the dist/* subpath export with an explicit .js extension
+import type Decorated from '@accordproject/concerto-core/dist/introspect/decorated.js';
+```
+
+`import type` is preferred: `Decorated` is an internal class and is usually only needed as a TypeScript type annotation.
+
+**Option B — structural type (recommended if you only call `getDecorator`):**
+
+```typescript
+// 4.0 — avoids the deep import entirely
+type Decoratable = {
+  getDecorator(name: string): { arguments?: unknown[] } | undefined;
+};
+```
+
 ## New Packages
 
 ### @accordproject/concertino
@@ -280,6 +309,7 @@ Use this checklist to migrate your application:
 - [ ] Remove usage of the `Concerto` class; use `ModelManager`, `Factory`, and `Serializer` directly
 - [ ] If needed, add `skipLocationNodes: false` option to preserve AST location information
 - [ ] Update any code that references internal `lib/` paths to use `src/` paths (or better, use public API only)
+- [ ] Update TypeScript imports of `Decorated` from `@accordproject/concerto-core/types/lib/introspect/decorated` to `@accordproject/concerto-core/dist/introspect/decorated.js` (or replace with a structural type)
 
 ### Testing
 - [ ] Run your test suite to identify any breaking changes
