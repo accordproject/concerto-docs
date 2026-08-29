@@ -30,6 +30,18 @@ For example, here is the mapping from the Concerto metamodel to the Go Lang meta
 
 Depending on your target language's metamodel creating this mapping may be trivial or challenging!
 
+## Feature Comparison Across Targets
+
+The following table summarizes key differences between different code generation targets:
+
+| Feature                | JavaScript | Go  | Python | Rust |
+|------------------------|------------|----|--------|------|
+| Inheritance Model     | Prototype-based | Struct embedding | Class-based | Trait-based |
+| Metamodel Compliance  | Partial UML | Custom | UML-compatible | Custom |
+| Platform Constraints  | Browser/node.js | Strong typing | Dynamic typing | Memory safety |
+
+---
+
 ## Escaping Identifiers
 
 Concerto has syntactic rules for valid identifiers for types, properties, namespaces etc. You will have to ensure that you create valid identifiers in your target language. For example, the Go code generator
@@ -96,6 +108,62 @@ toGoType(type) {
 ## Code Generation
 
 Now comes the easy part, actual code generation! 
+
+## Comparison of Compiled Results
+
+The following examples showcase how the same model compiles in different target languages:
+
+### JavaScript
+```js
+class Person{
+    constructor(name) {
+        this.name = name;
+    }
+}
+```
+
+### Go
+```go
+type Person struct {
+    Name string
+}
+```
+
+### Python
+```python
+class Person:
+    def __init__(self, name):
+        self.name = name
+```
+
+### Rust
+```rust
+struct Person {
+    name: String,
+}
+```
+
+---
+
+## Target-Specific Code Generation
+
+### JavaScript Code Generation
+- Supports both ES6 classes and prototype-based inheritance.
+- Works well with Node.js and browser environments.
+
+### Go Code Generation
+- Uses struct embedding for inheritance-like behavior.
+- Strongly typed with explicit field definitions.
+
+### Python Code Generation
+- Class-based approach with dynamic typing.
+- Compatible with Python's data classes for serialization.
+
+### Rust Code Generation
+- Leverages traits and ownership concepts.
+- Enforces memory safety through borrow checking.
+
+---
 
 ### Code Generation Visitor
 
@@ -182,6 +250,35 @@ The existing code generators use a battery of unit tests to ensure 100% code cov
 ## Expose via Concerto CLI
 
 To allow your code generator to be used with the Concerto CLI your code generator must assigned a target name and added to the [CodeGen module](https://github.com/accordproject/concerto-codegen#readme).
+
+## Troubleshooting and FAQs
+
+### Common Issues
+
+**Q: Why does my generated Go code not support inheritance?**  
+A: Go does not support traditional class inheritance. Use struct embedding instead.
+
+**Q: How do I ensure compatibility between JavaScript and TypeScript?**  
+A: Use TypeScript interfaces and explicit typing when generating TypeScript code.
+
+**Q: My Rust code does not compile due to ownership errors. What should I do?**  
+A: Ensure that you are using references (`&str`) instead of owned `String` when possible.
+
+---
+
+## Guidelines for Future Contributors
+
+### Updating the Documentation
+- Always update the `docs/reference/codegen/` section when adding a new target.
+- Follow the existing format for consistency.
+- Include examples and comparisons wherever applicable.
+
+### Checklist for Contributors
+✔ Ensure new targets follow existing patterns.  
+✔ Provide language-specific notes and compiled examples.  
+✔ Update the troubleshooting section if relevant.
+
+---
 
 ## Contribute Back!
 
